@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import Home from './Home.jsx'
+import Address from './Address.jsx'
+import NotFound from './NotFound.jsx'
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory, DefaultRoute } from 'react-router'
 
 class App extends Component {
@@ -26,10 +29,5 @@ const Container = (props) => <div>
   <Nav />
   {props.children}
 </div>
-
-const Home = () => <h1>Hello from Home!</h1>
-
-const Address = () => <h1>We are located at 555 Jackson St.</h1>
-const NotFound = () => <h1>404.. This page is not found!</h1>
 
 export default App

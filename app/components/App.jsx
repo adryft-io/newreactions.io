@@ -25,9 +25,11 @@ const Nav = () => (
   </div>
 )
 
-const Container = (props) => <div>
-  <Nav />
-  {props.children}
-</div>
+const Container = (props) => (
+  <div>
+    <Nav />
+    {props.children}
+  </div>
+)
 
-export default App
+export default App;

@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class RecipeForm extends Component {
-  render() {
-    return (
-      <div>
-        <h1> Sign Up! </h1>
-        <form action="/v1/recipes" method="post">
-          <input></input>
-        </form>
-      </div>
-    );
-  }
-}
+const RecipeForm = () =>
+  (
+  <div>
+    <h1> Sign Up! </h1>
+    <form action="/v1/recipes" method="post">
+      <input></input>
+    </form>
+  </div>
+  );
+
 
 export default RecipeForm;

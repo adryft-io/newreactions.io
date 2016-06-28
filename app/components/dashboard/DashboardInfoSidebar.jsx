@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 
 const DashboardInfoSidebar = ({ formulaInfo }) => (
   <div>
+    <h3>Formulae information</h3>
     <ul>
       <li>Name: {formulaInfo.name}</li>
       <li>Created In: {formulaInfo.createdin}</li>

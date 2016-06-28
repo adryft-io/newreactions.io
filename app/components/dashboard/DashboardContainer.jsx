@@ -71,7 +71,6 @@ class DashboardContainer extends React.Component {
           onSelectChannel={this.onSelectChannel}
           onSelectFormula={this.onSelectFormula}
         />
-        <h3>Formulae information</h3>
         <Sidebar>
           <DashboardInfoSidebar formulaInfo={this.state.selectedFormula} />
         </Sidebar>

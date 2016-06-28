@@ -2,7 +2,7 @@ import React from 'react';
 import Home from './Home.jsx';
 import NotFound from './NotFound.jsx';
 import Login from './Login.jsx';
-import SignIn from './Signin.jsx';
+import SignIn from './SignIn.jsx';
 import CreateContainer from './formulae/CreateContainer.jsx';
 import DashboardContainer from './dashboard/DashboardContainer.jsx';
 import MainContainer from './MainContainer.jsx';

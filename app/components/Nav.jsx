@@ -9,7 +9,7 @@ const Nav = () => (
       <li><Link to="/about">about</Link></li>
       <li><Link to="/dashboardcontainer">Dashboard</Link></li>
       <li><Link to="/formulae/create/gmail">Create Gmail Formula</Link></li>
-      <li><Link to="/signin">Signin</Link></li>
+      <li><Link to="/sign-in">Sign In</Link></li>
     </ul>
   </div>
 );

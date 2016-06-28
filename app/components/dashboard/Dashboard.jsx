@@ -7,7 +7,6 @@ const Dashboard = ({
   selectedFormula,
   onSelectFilter,
   onSelectFormula,
-  onClickConfigure,
 }) => (
   <div>
     <div>
@@ -59,7 +58,6 @@ Dashboard.propTypes = {
   selectedFormula: PropTypes.object,
   onSelectFilter: PropTypes.func.isRequired,
   onSelectFormula: PropTypes.func.isRequired,
-  onClickConfigure: PropTypes.func.isRequired,
 };
 
 export default Dashboard;

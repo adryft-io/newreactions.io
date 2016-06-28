@@ -1,5 +1,4 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
 import Dashboard from './Dashboard.jsx';
 import DashboardInfoSidebar from './DashboardInfoSidebar.jsx';
 import Sidebar from '../Sidebar.jsx';
@@ -20,7 +19,6 @@ class DashboardContainer extends React.Component {
     this.getFormulae = this.getFormulae.bind(this);
     this.onSelectFormula = this.onSelectFormula.bind(this);
     this.onSelectFilter = this.onSelectFilter.bind(this);
-    this.onClickConfigure = this.onClickConfigure.bind(this);
   }
 
   onSelectFormula(formula) {
@@ -29,12 +27,6 @@ class DashboardContainer extends React.Component {
 
   onSelectFilter(filter) {
     this.setState({ selectedFilter: filter });
-  }
-
-  onClickConfigure() {
-    const filter = this.state.selectedFilter;
-    const formula = this.state.selectedFormula;
-    browserHistory.push(`/dashboard/configure/${filter}/${formula}`);
   }
 
   getFilters() {
@@ -55,7 +47,6 @@ class DashboardContainer extends React.Component {
           selectedFormula={this.state.selectedFormula}
           onSelectFilter={this.onSelectFilter}
           onSelectFormula={this.onSelectFormula}
-          onClickConfigure={this.onClickConfigure}
         />
         <h3>Formulae information</h3>
         <Sidebar>

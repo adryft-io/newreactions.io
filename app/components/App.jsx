@@ -15,7 +15,7 @@ const App = () => (
       <IndexRoute component={Home} />
       <Route path="dashboardcontainer" component={DashboardContainer} />
       <Route path="login" component={Login} />
-      <Route path="Signin" component={SignIn} />
+      <Route path="sign-in" component={SignIn} />
       <Route path="formulae/create/:actionChannel" component={CreateContainer} />
       <Route path="*" component={NotFound} />
     </Route>

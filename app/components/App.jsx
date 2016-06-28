@@ -2,9 +2,9 @@ import React from 'react';
 import Home from './Home.jsx';
 import NotFound from './NotFound.jsx';
 import Login from './Login.jsx';
-import Dashboard from './components/Dashboard.jsx';
-import MainContainer from './components/MainContainer.jsx';
-import CreateContainer from './components/formulae/CreateContainer.jsx';
+import CreateContainer from './formulae/CreateContainer.jsx';
+import Dashboard from './Dashboard.jsx';
+import MainContainer from './MainContainer.jsx';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 

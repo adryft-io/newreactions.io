@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Gmail = () =>
+const Login = () =>
   (
   <div>
     <h1> Please Sign In </h1>
@@ -10,4 +10,4 @@ const Gmail = () =>
   </div>
   );
 
-export default Gmail;
+export default Login;

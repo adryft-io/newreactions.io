@@ -4,6 +4,7 @@ import NotFound from './NotFound.jsx';
 import Login from './Login.jsx';
 import SignIn from './Signin.jsx';
 import About from './About.jsx';
+import Manifesto from './Manifesto.jsx';
 import CreateContainer from './formulae/CreateContainer.jsx';
 import DashboardContainer from './dashboard/DashboardContainer.jsx';
 import MainContainer from './MainContainer.jsx';
@@ -18,6 +19,7 @@ const App = () => (
       <Route path="login" component={Login} />
       <Route path="Signin" component={SignIn} />
       <Route path="about" component={About} />
+      <Route path="manifesto" component={Manifesto} />
       <Route path="formulae/create/:actionChannel" component={CreateContainer} />
       <Route path="*" component={NotFound} />
     </Route>

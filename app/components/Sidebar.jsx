@@ -1,11 +1,11 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 const Sidebar = (props) => (
   <div>
-    <li>{props.children}</li>
+    {props.children}
   </div>
 );
 
-Sidebar.propTypes = { children: PropTypes.object.isRequired };
+Sidebar.propTypes = { children: React.PropTypes.object };
 
 export default Sidebar;

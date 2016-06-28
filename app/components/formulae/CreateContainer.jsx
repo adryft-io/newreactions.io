@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { browserHistory } from 'react-router';
 import Create from './Create.jsx';
 
@@ -8,7 +8,7 @@ class CreateContainer extends Component {
 
     this.state = {
       loading: true,
-      channel: 'gmail',
+      channel: props.params.actionChannel,
       selectedAction: null,
       selectedReaction: null,
       actions: [],
@@ -24,10 +24,9 @@ class CreateContainer extends Component {
     setTimeout(() => {
       this.setState({
         loading: false,
-        channel: 'gmail',
         actions: [{
           id: 1,
-          channel: 'gmail',
+          channel: this.state.channel,
           name: 'new-important',
         }],
         reactions: [{
@@ -68,5 +67,9 @@ class CreateContainer extends Component {
     );
   }
 }
+
+CreateContainer.propTypes = {
+  params: PropTypes.object.isRequired,
+};
 
 export default CreateContainer;

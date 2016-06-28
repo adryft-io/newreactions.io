@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Login extends Component {
+const Gmail = () =>
+  (
+  <div>
+    <h1> Please Sign In </h1>
+    <form action="http://54.236.76.159/v1/auth/connect/google" method="get">
+      <button type="submit"> Sigin with Google </button>
+    </form>
+  </div>
+  );
 
-  render() {
-    return (
-      <div>
-        <form>
-          <label><input ref="email" placeholder="email" defaultValue="joe@example.com" /></label>
-          <label><input ref="pass" placeholder="password" /></label> (hint: password1)<br />
-          <button type="submit">login</button>
-        </form>
-      </div>
-    );
-  }
-}
-
-export default Login;
+export default Gmail;

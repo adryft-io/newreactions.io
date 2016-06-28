@@ -1,41 +1,56 @@
-import React, { Component } from 'react';
-
-export class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { actions: [], reactions: [] };
-    this.getActions = this.getActions.bind(this);
-    this.getReactions = this.getReactions.bind(this);
-  }
-  getActions() {
-    this.setState({ actions: this.state.actions.push('action') });
-  }
-  getReactions() {
-    this.setState({ reactions: this.state.reactions.push('rx') });
-  }
-  render() {
-    return (
+import React from 'react';
+import Sidebar from './Sidebar.jsx';
+import MainContainer from './MainContainer.jsx';
+const Dashboard = () => (
+  <div>
+    <MainContainer>
       <div>
-        <span className="divider">
-          <h3>Welcome Shams,</h3>
-          <p>Here you can view all your created actions and reactions.
-          You may filter by the type of service you are using.</p>
-        </span>
-        <h3>
-          <ul>
-            <li>
-              {this.props.actions}
-            </li>
-          </ul>
-          <ul>
-            <li>
-              {this.props.reactions}
-            </li>
-          </ul>
-        </h3>
+        <h3>Welcome Esther,</h3>
+        <p>This is your personal dashboard. You may browse your formulae below.You may also use the filters to find what you are looking for.</p>
+        <span className="divider"></span>
       </div>
-    );
-  }
-}
-Dashboard.propTypes = { actions: React.PropTypes.text, reactions: React.PropTypes.text };
-Dashboard.defaultProps = { actions: ['hi im action'], reactions: ['hi im reaction'] };
+      <div>
+        <h3>Filter</h3>
+        <div className="row">
+          <div className="col-4">
+            <ul>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+            </ul>
+          </div>
+          <div className="col-4">
+            <ul>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+            </ul>
+          </div>
+          <div className="col-4">
+            <ul>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </MainContainer>
+    <Sidebar>
+      <h3>Formulae information</h3>
+      <ul>
+        <li><b>Created in:</b> date</li>
+        <li><b>Name:</b>date</li>
+        <li><b>Authenticated:</b>yes</li>
+      </ul>
+      <a className="button">create a formulae</a>
+    </Sidebar>
+  </div>
+);
+
+export default Dashboard;

@@ -2,6 +2,7 @@ import React from 'react';
 import Home from './Home.jsx';
 import NotFound from './NotFound.jsx';
 import Login from './Login.jsx';
+import SignIn from './SignIn.jsx';
 import CreateContainer from './formulae/CreateContainer.jsx';
 import DashboardContainer from './dashboard/DashboardContainer.jsx';
 import MainContainer from './MainContainer.jsx';
@@ -14,6 +15,7 @@ const App = () => (
       <IndexRoute component={Home} />
       <Route path="dashboardcontainer" component={DashboardContainer} />
       <Route path="login" component={Login} />
+      <Route path="sign-in" component={SignIn} />
       <Route path="formulae/create/:actionChannel" component={CreateContainer} />
       <Route path="*" component={NotFound} />
     </Route>

@@ -13,7 +13,8 @@
   "dependencies": {
     "react": "*",
     "react-dom": "*",
-    "react-router": "*"
+    "react-router": "*",
+    "webpack-dev-server": "^1.14.0"
   },
   "devDependencies": {
     "babel-core": "*",

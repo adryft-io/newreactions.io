@@ -3,12 +3,12 @@ import { Link } from 'react-router';
 
 const Nav = () => (
   <div>
-    <Link to="/">Home</Link>&nbsp;
-    <Link to="/address">Address</Link>&nbsp;
-    <Link to="/recipeform">Recipe Form</Link>&nbsp;
-    <Link to="/login">Login</Link>&nbsp;
-    <Link to="/gmail">Gmail</Link>&nbsp;
-    <Link to="/dashboard">Dashboard</Link>
+    <ul>
+      <li><Link to="/login">Log in</Link></li>
+      <li><Link to="/manifesto">manifesto</Link></li>
+      <li><Link to="/about">about</Link></li>
+      <li><Link to="/dashboard">Dashboard</Link></li>
+    </ul>
   </div>
 );
 

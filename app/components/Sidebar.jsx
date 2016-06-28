@@ -6,4 +6,6 @@ const Sidebar = (props) => (
   </div>
 );
 
+Sidebar.propTypes = { children: React.PropTypes.object };
+
 export default Sidebar;

@@ -1,7 +1,6 @@
 import React from 'react';
 import Home from './Home.jsx';
 import NotFound from './NotFound.jsx';
-import Login from './Login.jsx';
 import SignIn from './SignIn.jsx';
 import CreateContainer from './formulae/CreateContainer.jsx';
 import DashboardContainer from './dashboard/DashboardContainer.jsx';
@@ -13,8 +12,7 @@ const App = () => (
   <Router history={hashHistory}>
     <Route path="/" component={MainContainer}>
       <IndexRoute component={Home} />
-      <Route path="dashboardcontainer" component={DashboardContainer} />
-      <Route path="login" component={Login} />
+      <Route path="dashboard" component={DashboardContainer} />
       <Route path="sign-in" component={SignIn} />
       <Route path="formulae/create/:actionChannel" component={CreateContainer} />
       <Route path="*" component={NotFound} />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import Dashboard from './Dashboard.jsx';
+import DashboardInfoSidebar from './DashboardInfoSidebar.jsx';
 import Sidebar from '../Sidebar.jsx';
 
 class DashboardContainer extends React.Component {
@@ -8,9 +9,12 @@ class DashboardContainer extends React.Component {
     super(props);
     this.state = {
       filters: ['filter 1', 'filter 2', 'filter 3'],
-      formulae: ['formula 1', 'formula 2', 'formula 3'],
+      formulae: [
+        { name: 'name1', createdin: 'createdin1', date: 'date1', authenticated: false },
+        { name: 'name2', createdin: 'createdin2', date: 'date2', authenticated: false },
+      ],
       selectedFilter: null,
-      selectedFormula: null,
+      selectedFormula: { name: null, createdin: null, date: null, aunthenticated: false },
     };
     this.getFilters = this.getFilters.bind(this);
     this.getFormulae = this.getFormulae.bind(this);
@@ -54,7 +58,9 @@ class DashboardContainer extends React.Component {
           onClickConfigure={this.onClickConfigure}
         />
         <h3>Formulae information</h3>
-        <Sidebar formulaInfo={this.state.formulaInfo} />
+        <Sidebar>
+          <DashboardInfoSidebar formulaInfo={this.state.selectedFormula} />
+        </Sidebar>
         <a className="button">create a formulae</a>
       </div>
     );

@@ -28,12 +28,12 @@ const Dashboard = ({
             ))}
           </ul>
         </div>
-        <h3>Choose Formula ({selectedFormula})</h3>
+        <h3>Choose Formula For Details ({selectedFormula.name})</h3>
         <div className="col-4">
           <ul>
             {formulae.map((formula, index) => (
               <div key={index} onClick={() => { onSelectFormula(formula); }}>
-                <li>{formula}</li>
+                <li>{formula.name}</li>
               </div>
             ))}
           </ul>
@@ -42,7 +42,7 @@ const Dashboard = ({
           <ul>
             {formulae.map((formula, index) => (
               <div key={index} onClick={() => { onSelectFormula(formula); }}>
-                <li>{formula}</li>
+                <li>{formula.name}</li>
               </div>
             ))}
           </ul>
@@ -56,7 +56,7 @@ Dashboard.propTypes = {
   filters: PropTypes.array.isRequired,
   formulae: PropTypes.array.isRequired,
   selectedFilter: PropTypes.string,
-  selectedFormula: PropTypes.string,
+  selectedFormula: PropTypes.object,
   onSelectFilter: PropTypes.func.isRequired,
   onSelectFormula: PropTypes.func.isRequired,
   onClickConfigure: PropTypes.func.isRequired,

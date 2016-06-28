@@ -8,6 +8,7 @@ const DashboardInfoSidebar = ({ formulaInfo }) => (
       <li>Date: {formulaInfo.date}</li>
       <li>Authenticated: {formulaInfo.authenticated}</li>
     </ul>
+    <a className="button">Create a Formula</a>
   </div>
 );
 

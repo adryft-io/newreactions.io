@@ -7,52 +7,63 @@ class DashboardContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filters: ['filter 1', 'filter 2', 'filter 3'],
-      formulae: [
-        { name: 'name1', createdin: 'createdin1', date: 'date1', authenticated: false },
-        { name: 'name2', createdin: 'createdin2', date: 'date2', authenticated: false },
-      ],
-      selectedFilter: null,
+      channels: [],
+      formulae: [],
+      selectedChannel: null,
       selectedFormula: { name: null, createdin: null, date: null, aunthenticated: false },
     };
-    this.getFilters = this.getFilters.bind(this);
+    this.getChannels = this.getChannels.bind(this);
     this.getFormulae = this.getFormulae.bind(this);
     this.onSelectFormula = this.onSelectFormula.bind(this);
-    this.onSelectFilter = this.onSelectFilter.bind(this);
+    this.onSelectChannel = this.onSelectChannel.bind(this);
+  }
+
+  componentDidMount() {
+    this.getChannels();
+    this.getFormulae();
   }
 
   onSelectFormula(formula) {
     this.setState({ selectedFormula: formula });
   }
 
-  onSelectFilter(filter) {
-    this.setState({ selectedFilter: filter });
+  onSelectChannel(channel) {
+    this.setState({ selectedChannel: channel });
   }
 
-  getFilters() {
-    this.setState({ filters: this.state.filters.push('this is a filter') });
+  getChannels() {
+    this.setState({
+      channels: this.state.channels = [
+        'getchannelname1',
+        'getchannelname2',
+        'getchannelname3',
+      ],
+    });
   }
 
   getFormulae() {
-    this.setState({ formulae: this.state.formulae.push('this is a formulae') });
+    this.setState({ formulae: this.state.formulae = [
+      { name: 'getname1', createdin: 'getcreatedin1', date: 'getdate1', authenticated: false },
+      { name: 'getname2', createdin: 'getcreatedin2', date: 'getdate2', authenticated: false },
+    ],
+   });
   }
 
   render() {
     return (
       <div>
         <Dashboard
-          filters={this.state.filters}
+          channels={this.state.channels}
           formulae={this.state.formulae}
-          selectedFilter={this.state.selectedFilter}
+          selectedChannel={this.state.selectedChannel}
           selectedFormula={this.state.selectedFormula}
-          onSelectFilter={this.onSelectFilter}
+          onSelectChannel={this.onSelectChannel}
           onSelectFormula={this.onSelectFormula}
         />
         <h3>Formulae information</h3>
         <Sidebar>
           <DashboardInfoSidebar formulaInfo={this.state.selectedFormula} />
         </Sidebar>
-        <a className="button">create a formulae</a>
       </div>
     );
   }

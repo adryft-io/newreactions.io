@@ -1,28 +1,28 @@
 import React, { PropTypes } from 'react';
 
 const Dashboard = ({
-  filters,
+  channels,
   formulae,
-  selectedFilter,
+  selectedChannel,
   selectedFormula,
-  onSelectFilter,
+  onSelectChannel,
   onSelectFormula,
 }) => (
   <div>
     <div>
       <h3>Welcome Esther,</h3>
       <p>This is your personal dashboard. You may browse your formulae below.
-      You may also use the filters to find what you are looking for.</p>
+      You may also use the channels to find what you are looking for.</p>
       <span className="divider"></span>
     </div>
     <div>
-      <h3>Filter ({selectedFilter})</h3>
+      <h3>Choose a Channel ({selectedChannel})</h3>
       <div className="row">
         <div className="col-4">
           <ul>
-            {filters.map((filter, index) => (
-              <div key={index} onClick={() => { onSelectFilter(filter); }}>
-                <li>{filter}</li>
+            {channels.map((channel, index) => (
+              <div key={index} onClick={() => { onSelectChannel(channel); }}>
+                <li>{channel}</li>
               </div>
             ))}
           </ul>
@@ -52,11 +52,11 @@ const Dashboard = ({
   );
 
 Dashboard.propTypes = {
-  filters: PropTypes.array.isRequired,
+  channels: PropTypes.array.isRequired,
   formulae: PropTypes.array.isRequired,
-  selectedFilter: PropTypes.string,
+  selectedChannel: PropTypes.string,
   selectedFormula: PropTypes.object,
-  onSelectFilter: PropTypes.func.isRequired,
+  onSelectChannel: PropTypes.func.isRequired,
   onSelectFormula: PropTypes.func.isRequired,
 };
 

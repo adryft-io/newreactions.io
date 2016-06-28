@@ -43,6 +43,7 @@ class CreateContainer extends Component {
   }
 
   onSave() {
+    console.log(this.state);
     console.log('saving...');
     setTimeout(() => { console.log('saved'); }, 250);
   }

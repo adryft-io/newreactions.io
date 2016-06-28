@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 import Create from './Create.jsx';
 
 class CreateContainer extends Component {
@@ -49,7 +49,7 @@ class CreateContainer extends Component {
   onClickConfigure() {
     const actionId = this.state.selectedAction.id;
     const reactionId = this.state.selectedReaction.id;
-    browserHistory.push(`/formulae/configure/${actionId}/${reactionId}`);
+    hashHistory.push(`/formulae/configure/${actionId}/${reactionId}`);
   }
 
   render() {

@@ -1,9 +1,11 @@
 import React from 'react';
-import Home from './Home.jsx';
+import Home from './home/Home.jsx';
 import NotFound from './NotFound.jsx';
 import SignIn from './SignIn.jsx';
 import CreateContainer from './formulae/CreateContainer.jsx';
 import DashboardContainer from './dashboard/DashboardContainer.jsx';
+import AboutContainer from './about/AboutContainer.jsx';
+import ManifestoContainer from './manifesto/ManifestoContainer.jsx';
 import MainContainer from './MainContainer.jsx';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
@@ -14,6 +16,8 @@ const App = () => (
       <IndexRoute component={Home} />
       <Route path="dashboard" component={DashboardContainer} />
       <Route path="sign-in" component={SignIn} />
+      <Route path="about" component={AboutContainer} />
+      <Route path="manifesto" component={ManifestoContainer} />
       <Route path="formulae/create/:actionChannel" component={CreateContainer} />
       <Route path="*" component={NotFound} />
     </Route>

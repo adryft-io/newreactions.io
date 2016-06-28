@@ -1,6 +1,14 @@
 import React, { PropTypes } from 'react';
 
-const Dashboard = ({ filters, formulae }) => (
+const Dashboard = ({
+  filters,
+  formulae,
+  selectedFilter,
+  selectedFormula,
+  onSelectFilter,
+  onSelectFormula,
+  onClickConfigure,
+}) => (
   <div>
     <div>
       <h3>Welcome Esther,</h3>
@@ -9,21 +17,22 @@ const Dashboard = ({ filters, formulae }) => (
       <span className="divider"></span>
     </div>
     <div>
-      <h3>Filter</h3>
+      <h3>Filter ({selectedFilter})</h3>
       <div className="row">
         <div className="col-4">
           <ul>
             {filters.map((filter, index) => (
-              <div key={index}>
+              <div key={index} onClick={() => { onSelectFilter(filter); }}>
                 <li>{filter}</li>
               </div>
             ))}
           </ul>
         </div>
+        <h3>Choose Formula ({selectedFormula})</h3>
         <div className="col-4">
           <ul>
             {formulae.map((formula, index) => (
-              <div key={index}>
+              <div key={index} onClick={() => { onSelectFormula(formula); }}>
                 <li>{formula}</li>
               </div>
             ))}
@@ -32,7 +41,7 @@ const Dashboard = ({ filters, formulae }) => (
         <div className="col-4">
           <ul>
             {formulae.map((formula, index) => (
-              <div key={index}>
+              <div key={index} onClick={() => { onSelectFormula(formula); }}>
                 <li>{formula}</li>
               </div>
             ))}
@@ -46,6 +55,11 @@ const Dashboard = ({ filters, formulae }) => (
 Dashboard.propTypes = {
   filters: PropTypes.array.isRequired,
   formulae: PropTypes.array.isRequired,
+  selectedFilter: PropTypes.string,
+  selectedFormula: PropTypes.string,
+  onSelectFilter: PropTypes.func.isRequired,
+  onSelectFormula: PropTypes.func.isRequired,
+  onClickConfigure: PropTypes.func.isRequired,
 };
 
 export default Dashboard;

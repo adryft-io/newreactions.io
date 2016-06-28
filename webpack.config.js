@@ -9,6 +9,7 @@ module.exports = {
     contentBase: './app',
     port: 8100,
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       {

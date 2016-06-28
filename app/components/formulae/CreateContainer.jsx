@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 import Create from './Create.jsx';
 
 class CreateContainer extends Component {
@@ -25,10 +26,12 @@ class CreateContainer extends Component {
         loading: false,
         channel: 'gmail',
         actions: [{
+          id: 1,
           channel: 'gmail',
           name: 'new-important',
         }],
         reactions: [{
+          id: 1,
           channel: 'twilio',
           name: 'sms',
         }],
@@ -37,19 +40,17 @@ class CreateContainer extends Component {
   }
 
   onSelectAction(action) {
-    console.log('action: ', action);
     this.setState({ selectedAction: action });
-    console.log(this.state);
   }
 
   onSelectReaction(reaction) {
-    console.log('reaction: ', reaction);
     this.setState({ selectedReaction: reaction });
-    console.log(this.state);
   }
 
   onClickConfigure() {
-    console.log('go to configuration page...');
+    const actionId = this.state.selectedAction.id;
+    const reactionId = this.state.selectedReaction.id;
+    browserHistory.push(`/formulae/configure/${actionId}/${reactionId}`);
   }
 
   render() {

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Home = () => (
+const Home = (props) => (
   <div>
-    <h1>Here we create action and reaction</h1>
-    <h2>Please log in to get started</h2>
+    <h1>{this.props.title}</h1>
+    <h2>{this.props.subtitle}</h2>
   </div>
 );
 

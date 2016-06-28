@@ -28,6 +28,7 @@ class DashboardContainer extends React.Component {
   }
 
   onSelectChannel(channel) {
+    this.filterFormulas(channel);
     this.setState({ selectedChannel: channel });
   }
 
@@ -45,6 +46,16 @@ class DashboardContainer extends React.Component {
     this.setState({ formulae: this.state.formulae = [
       { name: 'getname1', createdin: 'getcreatedin1', date: 'getdate1', authenticated: false },
       { name: 'getname2', createdin: 'getcreatedin2', date: 'getdate2', authenticated: false },
+    ],
+   });
+  }
+
+  filterFormulas(channel) {
+    // do fetch here 'filter ', channel, ' here'
+    console.log('filtered: ', channel);
+    this.setState({ formulae: this.state.formulae = [
+      { name: 'filname1', createdin: 'filcreatedin1', date: 'fildate1', authenticated: false },
+      { name: 'filname2', createdin: 'filcreatedin2', date: 'fildate2', authenticated: false },
     ],
    });
   }

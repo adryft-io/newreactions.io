@@ -7,6 +7,7 @@ import ConfigureContainer from './formulae/ConfigureContainer.jsx';
 import DashboardContainer from './dashboard/DashboardContainer.jsx';
 import AboutContainer from './about/AboutContainer.jsx';
 import ManifestoContainer from './manifesto/ManifestoContainer.jsx';
+import SelectContainer from './select/SelectContainer.jsx';
 import MainContainer from './MainContainer.jsx';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
@@ -19,6 +20,7 @@ const App = () => (
       <Route path="sign-in" component={SignIn} />
       <Route path="about" component={AboutContainer} />
       <Route path="manifesto" component={ManifestoContainer} />
+      <Route path="select" component={SelectContainer} />
       <Route path="formulae/create/:actionChannel" component={CreateContainer} />
       <Route path="formulae/configure/:actionId/:reactionId" component={ConfigureContainer} />
       <Route path="*" component={NotFound} />

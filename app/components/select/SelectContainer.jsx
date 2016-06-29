@@ -9,9 +9,20 @@ class SelectContainer extends React.Component {
     super(props);
     this.state = {
       channel: ['gmail', 'wemo', 'twilio'],
-      isHovered: 'null',
+      isHovered: '',
     };
+    this.onMouseEnter = this.onMouseEnter.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
   }
+
+  onMouseEnter(value) {
+    this.setState({ isHovered: value });
+  }
+
+  onMouseLeave() {
+    this.setState({ isHovered: '' });
+  }
+
 
   render() {
     return (
@@ -19,8 +30,17 @@ class SelectContainer extends React.Component {
         <h4> new reaction </h4>
         <h3> Here is Action and Reaction </h3>
         <p> Welcome to the internet of things, what would you like to create today? </p>
-        <Select />
-        <SelectInfoSidebar channel={this.state.channel} isHovered={this.state.isHovered} />
+        <Select
+          channel={this.state.channel}
+          onMouseLeave={this.onMouseLeave}
+          onMouseEnter={this.onMouseEnter}
+          isHovered={this.state.isHovered}
+
+        />
+        <SelectInfoSidebar
+          channel={this.state.channel}
+          isHovered={this.state.isHovered}
+        />
         <h4><Link to="/about"> About Us </Link></h4>
         <h4><Link to="/manifesto"> Manifesto </Link></h4>
       </div>

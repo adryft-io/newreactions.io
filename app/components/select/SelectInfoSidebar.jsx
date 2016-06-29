@@ -4,15 +4,19 @@ const SelectInfoSidebar = (props) => (
   <div>
     <ul>
       <span className="divider"></span>
-      {props.channel.map((value) => (
-        <li>{value}</li>)
+      {props.channel.map((value, index) => (
+        <li key={index}>
+        {value}
+        {(props.isHovered === value) ? `${value}` : ''}
+        </li>)
       )}
     </ul>
   </div>
 );
 
 SelectInfoSidebar.propTypes = {
-  channel: PropTypes.object.isRequired,
+  channel: PropTypes.array.isRequired,
+  isHovered: PropTypes.string.isRequired,
 };
 
 export default SelectInfoSidebar;

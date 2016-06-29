@@ -2,6 +2,7 @@ import React from 'react';
 import Dashboard from './Dashboard.jsx';
 import DashboardInfoSidebar from './DashboardInfoSidebar.jsx';
 import Sidebar from '../Sidebar.jsx';
+import _ from 'underscore';
 
 class DashboardContainer extends React.Component {
   constructor(props) {
@@ -33,12 +34,22 @@ class DashboardContainer extends React.Component {
   }
 
   getChannels() {
+    let channels;
+    fetch('http://localhost:8100/api/v1/recipes')
+    .then((res) => res.json())
+    .then(data => {
+      console.log(data.data);
+      channels = _.reduce(data.data, (prev, curr) => {
+        if (curr.trigger_channel) {
+          prev.push(curr.trigger_channel);
+        }
+        return prev;
+      }, []);
+      console.log(channels);
+    });
+
     this.setState({
-      channels: this.state.channels = [
-        'getchannelname1',
-        'getchannelname2',
-        'getchannelname3',
-      ],
+      channels: this.state.channels = channels || [{ name: 'hello' }],
     });
   }
 

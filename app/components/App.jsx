@@ -3,6 +3,7 @@ import Home from './Home.jsx';
 import NotFound from './NotFound.jsx';
 import SignIn from './SignIn.jsx';
 import CreateContainer from './formulae/CreateContainer.jsx';
+import ConfigureContainer from './formulae/ConfigureContainer.jsx';
 import DashboardContainer from './dashboard/DashboardContainer.jsx';
 import MainContainer from './MainContainer.jsx';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
@@ -15,6 +16,7 @@ const App = () => (
       <Route path="dashboard" component={DashboardContainer} />
       <Route path="sign-in" component={SignIn} />
       <Route path="formulae/create/:actionChannel" component={CreateContainer} />
+      <Route path="formulae/configure/:actionId/:reactionId" component={ConfigureContainer} />
       <Route path="*" component={NotFound} />
     </Route>
   </Router>

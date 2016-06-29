@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
+import React, { Component, PropTypes } from 'react';
+import { hashHistory } from 'react-router';
 import Create from './Create.jsx';
+import Sidebar from '../Sidebar.jsx';
+import InfoSidebar from './InfoSidebar.jsx';
 
 class CreateContainer extends Component {
   constructor(props) {
@@ -8,7 +10,7 @@ class CreateContainer extends Component {
 
     this.state = {
       loading: true,
-      channel: 'gmail',
+      channel: props.params.actionChannel,
       selectedAction: null,
       selectedReaction: null,
       actions: [],
@@ -24,10 +26,9 @@ class CreateContainer extends Component {
     setTimeout(() => {
       this.setState({
         loading: false,
-        channel: 'gmail',
         actions: [{
           id: 1,
-          channel: 'gmail',
+          channel: this.state.channel,
           name: 'new-important',
         }],
         reactions: [{
@@ -50,23 +51,44 @@ class CreateContainer extends Component {
   onClickConfigure() {
     const actionId = this.state.selectedAction.id;
     const reactionId = this.state.selectedReaction.id;
-    browserHistory.push(`/formulae/configure/${actionId}/${reactionId}`);
+    hashHistory.push(`/formulae/configure/${actionId}/${reactionId}`);
   }
 
   render() {
+    if (this.state.loading) {
+      return (<div>loading...</div>);
+    }
     return (
-      <Create
-        channel={this.state.channel}
-        selectedAction={this.state.selectedAction}
-        actions={this.state.actions}
-        selectedReaction={this.state.selectedReaction}
-        reactions={this.state.reactions}
-        onSelectAction={this.onSelectAction}
-        onSelectReaction={this.onSelectReaction}
-        onClickConfigure={this.onClickConfigure}
-      />
+      <div>
+        <Create
+          channel={this.state.channel}
+          selectedAction={this.state.selectedAction}
+          actions={this.state.actions}
+          selectedReaction={this.state.selectedReaction}
+          reactions={this.state.reactions}
+          onSelectAction={this.onSelectAction}
+          onSelectReaction={this.onSelectReaction}
+          onClickConfigure={this.onClickConfigure}
+        />
+        <Sidebar>
+          <InfoSidebar
+            title="How it works"
+            linkPath="/dashboard"
+            linkLabel="go back to dashboard"
+          >
+            <p>
+              When you create a formula you pair a service with another
+              in order to automate your life.
+            </p>
+          </InfoSidebar>
+        </Sidebar>
+      </div>
     );
   }
 }
+
+CreateContainer.propTypes = {
+  params: PropTypes.object.isRequired,
+};
 
 export default CreateContainer;

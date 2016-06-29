@@ -11,6 +11,8 @@ class CreateContainer extends Component {
       selectedReaction: null,
     };
 
+    this.handleName = this.handleName.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.onSave = this.onSave.bind(this);
   }
 
@@ -38,14 +40,34 @@ class CreateContainer extends Component {
             label: 'Message',
           }],
         },
+        formula: {
+          name: '',
+          trigger_channel: 'gmail',
+          trigger_name: 'new-important',
+          trigger_fields: {},
+          action_channel: 'twilio',
+          action_name: 'sms',
+          action_fields: {},
+          user_id: 1,
+        },
       });
     }, 250);
   }
 
   onSave() {
-    console.log(this.state);
+    console.log(this.state.formula);
     console.log('saving...');
     setTimeout(() => { console.log('saved'); }, 250);
+  }
+
+  handleName(name) {
+    this.setState({ formula: { ...this.state.formula, name } });
+  }
+
+  handleChange(formulaPart, fieldName, fieldValue) {
+    // TODO: state should be treated as immutable
+    this.state.formula[`${formulaPart}_fields`][fieldName] = fieldValue;
+    console.log(this.state);
   }
 
   render() {
@@ -56,6 +78,8 @@ class CreateContainer extends Component {
       <Configure
         selectedAction={this.state.selectedAction}
         selectedReaction={this.state.selectedReaction}
+        handleName={this.handleName}
+        handleChange={this.handleChange}
         onSave={this.onSave}
       />
     );

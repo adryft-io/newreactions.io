@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 
-const Configure = ({ selectedAction, selectedReaction, onSave }) => (
+const Configure = ({ selectedAction, selectedReaction, handleName, handleChange, onSave }) => (
   <div>
     <h3>Name your formula</h3>
-    <input />
+    <input onChange={(e) => { handleName(e.target.value); }} />
 
     <h3>{selectedAction && selectedAction.name} Fields</h3>
     {selectedAction.fields.length < 1 ?
@@ -13,7 +13,7 @@ const Configure = ({ selectedAction, selectedReaction, onSave }) => (
       selectedAction.fields.map((field, index) => (
         <div key={index}>
           <h3>{field.name}</h3>
-          <input />
+          <input onChange={(e) => { handleChange('trigger', field.name, e.target.value); }} />
           <span className="divider" />
         </div>
       ))
@@ -27,7 +27,7 @@ const Configure = ({ selectedAction, selectedReaction, onSave }) => (
       selectedReaction.fields.map((field, index) => (
         <div key={index}>
           <h3>{field.name}</h3>
-          <input />
+          <input onChange={(e) => { handleChange('action', field.name, e.target.value); }} />
           <span className="divider" />
         </div>
       ))
@@ -40,6 +40,8 @@ const Configure = ({ selectedAction, selectedReaction, onSave }) => (
 Configure.propTypes = {
   selectedAction: PropTypes.object.isRequired,
   selectedReaction: PropTypes.object.isRequired,
+  handleName: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
 };
 

@@ -44,22 +44,39 @@ class ConfigureContainer extends Component {
         },
         formula: {
           name: '',
-          trigger_channel: 'gmail',
-          trigger_name: 'new-important',
           trigger_fields: {},
-          action_channel: 'twilio',
-          action_name: 'sms',
           action_fields: {},
-          user_id: 1,
         },
       });
     }, 250);
   }
 
   onSave() {
-    console.log(this.state.formula);
-    console.log('saving...');
-    setTimeout(() => { console.log('saved'); }, 250);
+    const formula = {
+      name: '',
+      trigger_channel: 'gmail',
+      trigger_name: 'new-important',
+      trigger_fields: JSON.stringify(this.state.formula.trigger_fields),
+      action_channel: 'twilio',
+      action_name: 'sms',
+      action_fields: JSON.stringify(this.state.formula.action_fields),
+      user_id: 1,
+    };
+
+    fetch('/api/v1/recipes', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formula),
+    })
+    .then(response => {
+      console.log(response);
+    })
+    .catch(err => {
+      console.error(err);
+    });
   }
 
   handleName(name) {

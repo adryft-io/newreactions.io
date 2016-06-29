@@ -3,7 +3,7 @@ import Configure from './Configure.jsx';
 import Sidebar from '../Sidebar.jsx';
 import InfoSidebar from './InfoSidebar.jsx';
 
-class CreateContainer extends Component {
+class ConfigureContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -101,8 +101,8 @@ class CreateContainer extends Component {
   }
 }
 
-CreateContainer.propTypes = {
+ConfigureContainer.propTypes = {
   params: PropTypes.object.isRequired,
 };
 
-export default CreateContainer;
+export default ConfigureContainer;

@@ -53,6 +53,9 @@ class CreateContainer extends Component {
   }
 
   render() {
+    if (this.state.loading) {
+      return (<div>loading...</div>);
+    }
     return (
       <Create
         channel={this.state.channel}

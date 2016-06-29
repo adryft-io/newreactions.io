@@ -67,7 +67,6 @@ class CreateContainer extends Component {
   handleChange(formulaPart, fieldName, fieldValue) {
     // TODO: state should be treated as immutable
     this.state.formula[`${formulaPart}_fields`][fieldName] = fieldValue;
-    console.log(this.state);
   }
 
   render() {

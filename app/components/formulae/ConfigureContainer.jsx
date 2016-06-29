@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Configure from './Configure.jsx';
+import Sidebar from '../Sidebar.jsx';
+import InfoSidebar from './InfoSidebar.jsx';
 
 class CreateContainer extends Component {
   constructor(props) {
@@ -74,13 +76,27 @@ class CreateContainer extends Component {
       return (<div>loading...</div>);
     }
     return (
-      <Configure
-        selectedAction={this.state.selectedAction}
-        selectedReaction={this.state.selectedReaction}
-        handleName={this.handleName}
-        handleChange={this.handleChange}
-        onSave={this.onSave}
-      />
+      <div>
+        <Configure
+          selectedAction={this.state.selectedAction}
+          selectedReaction={this.state.selectedReaction}
+          handleName={this.handleName}
+          handleChange={this.handleChange}
+          onSave={this.onSave}
+        />
+        <Sidebar>
+          <InfoSidebar
+            title="About Configuration"
+            linkPath="/dashboard"
+            linkLabel="cancel"
+          >
+            <p>
+              These settings create a simple configuration for your formula.
+              They show the options you have per service.
+            </p>
+          </InfoSidebar>
+        </Sidebar>
+      </div>
     );
   }
 }

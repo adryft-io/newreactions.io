@@ -4,14 +4,21 @@ body{
 
 /*Typography */
 h1, h2 {
-  /*margin-left: 60px;*/
+  margin-left: 60px;
 }
 h1 {
-  font-size: 7rem;
+  color: #f6ae73;
+  font-size: 70px;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 40px;
   font-weight: 400;
+}
+
+/* Splash */
+
+.splash {
+  padding-top: 260px;
 }

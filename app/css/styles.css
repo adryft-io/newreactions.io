@@ -1,0 +1,17 @@
+body{
+  background-color: #f4f3ef;
+}
+
+/*Typography */
+h1, h2 {
+  /*margin-left: 60px;*/
+}
+h1 {
+  font-size: 7rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 400;
+}

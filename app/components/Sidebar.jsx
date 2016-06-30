@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Sidebar = (props) => (
-  <div>
+  <div className="four columns">
     {props.children}
   </div>
 );

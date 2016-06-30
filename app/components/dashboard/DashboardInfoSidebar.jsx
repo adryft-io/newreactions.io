@@ -15,7 +15,7 @@ const DashboardInfoSidebar = ({ formulaInfo }) => (
         <li>Action Fields: {formulaInfo.action_fields}</li>
         <li>Action Name: {formulaInfo.action_name}</li>
       </ul>}
-    <a className="button">Create a Formula</a>
+    <a href="#/select" className="button">Create a Formula</a>
   </div>
 );
 

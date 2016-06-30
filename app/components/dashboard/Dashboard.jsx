@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { listChannels, listFormulae } from './DashboardHelpers.js';
 
 const Dashboard = ({
   channels,
@@ -20,30 +21,18 @@ const Dashboard = ({
       <div className="row">
         <div className="col-4">
           <ul>
-            {channels.map((channel, index) => (
-              <div key={index} onClick={() => { onSelectChannel(channel); }}>
-                <li>{channel}</li>
-              </div>
-            ))}
+            {listChannels(channels, onSelectChannel)}
           </ul>
         </div>
-        <h3>Choose Formula For Details ({selectedFormula.name})</h3>
+        <h3>Choose Formula For Details ({selectedFormula.trigger_name})</h3>
         <div className="col-4">
           <ul>
-            {formulae.map((formula, index) => (
-              <div key={index} onClick={() => { onSelectFormula(formula); }}>
-                <li>{formula.name}</li>
-              </div>
-            ))}
+            {listFormulae(formulae, onSelectFormula, formulae.length / 2)}
           </ul>
         </div>
         <div className="col-4">
           <ul>
-            {formulae.map((formula, index) => (
-              <div key={index} onClick={() => { onSelectFormula(formula); }}>
-                <li>{formula.name}</li>
-              </div>
-            ))}
+            {listFormulae(formulae, onSelectFormula, 0, formulae.length / 2)}
           </ul>
         </div>
       </div>

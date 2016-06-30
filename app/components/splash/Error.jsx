@@ -1,5 +1,5 @@
 import React from 'react';
-import Splash from '../Splash.jsx';
+import Splash from './Splash.jsx';
 
 const Error = () => (
   <div>

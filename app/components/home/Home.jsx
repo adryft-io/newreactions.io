@@ -1,9 +1,12 @@
 import React from 'react';
-import Splash from '../Splash.jsx';
+import Splash from '../splash/Splash.jsx';
 
 const Home = () => (
   <div>
-    <Splash title={'Here we create action and reaction'} subtitle={'Please log in to get started'} />
+    <Splash
+      title={'Here we create action and reaction'}
+      subtitle={'Please log in to get started'}
+    />
   </div>
 );
 

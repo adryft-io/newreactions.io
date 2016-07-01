@@ -38,14 +38,23 @@ class DashboardContainer extends React.Component {
   }
 
   filterFormulas(channel) {
+<<<<<<< 38a5d8d5d77c11806cdf5799d6d2baef4fe9407d
     fetch(`http://localhost:8100/api/v1/recipes?trigger_channel__is=${channel}`)
     .then(res => res.json())
     .then(data => this.setState({ formulae: data.data }));
+=======
+    // do fetch here 'filter ', channel, ' here'
+    this.setState({ formulae: this.state.formulae = [
+      { name: 'filname1', createdin: 'filcreatedin1', date: 'fildate1', authenticated: false },
+      { name: 'filname2', createdin: 'filcreatedin2', date: 'fildate2', authenticated: false },
+    ],
+   });
+>>>>>>> Styling, and positioning of Dashboard are significantly improved
   }
 
   render() {
     return (
-      <div>
+      <div className="row">
         <Dashboard
           channels={this.state.channels}
           formulae={this.state.formulae}

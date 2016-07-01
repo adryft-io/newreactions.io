@@ -7,10 +7,15 @@ body{
   color: #69ceea;
   font-weight: bold;
 }
+a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+}
 .componentContainer {
   max-width: 100%;
   padding: 100px;
-  padding-right:0px;
+  padding-right:100px;
 }
 /* offset  and margins */
 
@@ -83,7 +88,31 @@ li {
 
 /* sidebar */
 .sidebar {
-  padding-right: 80px;
-  padding-left:30px;
+  padding-right: 70px;
+  padding-left:50px;
   margin:0;
+}
+
+.sidebarLineOne{
+  height: inherit;
+  margin: 0;
+}
+.sidebarLineTwo{
+  border-left: solid 1px grey;
+  height: inherit;
+  margin: 0;
+}
+
+.sidebarDiv {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+}
+
+.navigation li {
+  display: inline;
+  margin-right: 10px;
+  position: 
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Dashboard from './Dashboard.jsx';
 import DashboardInfoSidebar from './DashboardInfoSidebar.jsx';
 import Sidebar from '../Sidebar.jsx';
+import { getUniqueChannels } from './DashboardHelpers.js';
 
 class DashboardContainer extends React.Component {
   constructor(props) {
@@ -10,17 +11,15 @@ class DashboardContainer extends React.Component {
       channels: [],
       formulae: [],
       selectedChannel: null,
-      selectedFormula: { name: null, createdin: null, date: null, aunthenticated: false },
+      selectedFormula: {},
     };
-    this.getChannels = this.getChannels.bind(this);
-    this.getFormulae = this.getFormulae.bind(this);
+    this.getChannelsAndFormulas = this.getChannelsAndFormulas.bind(this);
     this.onSelectFormula = this.onSelectFormula.bind(this);
     this.onSelectChannel = this.onSelectChannel.bind(this);
   }
 
   componentDidMount() {
-    this.getChannels();
-    this.getFormulae();
+    this.getChannelsAndFormulas();
   }
 
   onSelectFormula(formula) {
@@ -32,32 +31,16 @@ class DashboardContainer extends React.Component {
     this.setState({ selectedChannel: channel });
   }
 
-  getChannels() {
-    this.setState({
-      channels: this.state.channels = [
-        'getchannelname1',
-        'getchannelname2',
-        'getchannelname3',
-      ],
-    });
-  }
-
-  getFormulae() {
-    this.setState({ formulae: this.state.formulae = [
-      { name: 'getname1', createdin: 'getcreatedin1', date: 'getdate1', authenticated: false },
-      { name: 'getname2', createdin: 'getcreatedin2', date: 'getdate2', authenticated: false },
-    ],
-   });
+  getChannelsAndFormulas() {
+    fetch('http://localhost:8100/api/v1/recipes?trigger_channel__not=null')
+    .then(res => res.json())
+    .then(data => this.setState({ channels: getUniqueChannels(data), formulae: data.data }));
   }
 
   filterFormulas(channel) {
-    // do fetch here 'filter ', channel, ' here'
-    console.log('filtered: ', channel);
-    this.setState({ formulae: this.state.formulae = [
-      { name: 'filname1', createdin: 'filcreatedin1', date: 'fildate1', authenticated: false },
-      { name: 'filname2', createdin: 'filcreatedin2', date: 'fildate2', authenticated: false },
-    ],
-   });
+    fetch(`http://localhost:8100/api/v1/recipes?trigger_channel__is=${channel}`)
+    .then(res => res.json())
+    .then(data => this.setState({ formulae: data.data }));
   }
 
   render() {

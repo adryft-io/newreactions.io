@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from './Nav.jsx';
+// import Nav from './Nav.jsx';
 
 const MainContainer = (props) => (
   <div>
@@ -7,7 +7,6 @@ const MainContainer = (props) => (
     <div>
     {props.children}
     </div>
-  
   </div>
 
 );

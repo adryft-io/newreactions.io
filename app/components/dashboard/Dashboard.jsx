@@ -4,6 +4,8 @@ import { listChannels, listFormulae } from './DashboardHelpers.js';
 const Dashboard = ({
   channels,
   formulae,
+  selectedChannel,
+  selectedFormula,
   onSelectChannel,
   onSelectFormula,
 }) => (
@@ -20,18 +22,18 @@ const Dashboard = ({
         <div className="four columns">
           <h3>Channel</h3>
           <ul className="offset">
-            {listChannels(channels, onSelectChannel)}
+            {listChannels(channels, onSelectChannel, selectedChannel)}
           </ul>
         </div>
         <div className="four columns">
           <h3>Formulae</h3>
           <ul>
-            {listFormulae(formulae, onSelectFormula, formulae.length / 2)}
+            {listFormulae(formulae, onSelectFormula, selectedFormula, formulae.length / 2)}
           </ul>
         </div>
         <div className="four columns">
           <ul>
-            {listFormulae(formulae, onSelectFormula, 0, formulae.length / 2)}
+            {listFormulae(formulae, onSelectFormula, selectedFormula, 0, formulae.length / 2)}
           </ul>
         </div>
       </div>

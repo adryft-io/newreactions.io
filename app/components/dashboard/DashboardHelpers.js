@@ -13,12 +13,12 @@ const listChannels = (channels, callback, selectedChannel) => channels.map((chan
   </div>
 ));
 
-const listFormulae = (formulae, callback, start, end, selectedFormula) =>
+const listFormulae = (formulae, callback, selectedFormula, start, end) =>
   formulae
   .slice(start, end)
   .map((formula, index) => (
     <div key={index} onClick={() => { callback(formula); }}>
-      <li className={selectedFormula === formula.trigger_name ? 'activelink' : ''}>
+      <li className={selectedFormula === formula ? 'activelink' : ''}>
         {formula.trigger_name}
       </li>
     </div>

@@ -29,8 +29,13 @@ const Create = ({
     ))}
 
     {selectedAction && selectedReaction ?
+      null :
+      <p>please choose both an action <em>and</em> a reaction</p>
+    }
+
+    {selectedAction && selectedReaction ?
       <a className="button" onClick={onClickConfigure}>configure your formula</a> :
-      <span>configure your formula</span>
+      <span className="button">configure your formula</span>
     }
   </div>
 );

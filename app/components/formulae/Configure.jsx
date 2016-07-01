@@ -1,6 +1,13 @@
 import React, { PropTypes } from 'react';
 
-const Configure = ({ selectedAction, selectedReaction, handleName, handleChange, onSave }) => (
+const Configure = ({
+  selectedAction,
+  selectedReaction,
+  handleName,
+  handleChange,
+  valid,
+  onSave,
+}) => (
   <div>
     <h3>Name your formula</h3>
     <input onChange={(e) => { handleName(e.target.value); }} />
@@ -33,7 +40,8 @@ const Configure = ({ selectedAction, selectedReaction, handleName, handleChange,
       ))
     }
 
-    <a className="button" onClick={onSave}>save</a>
+    {valid ? null : <p>please fill out all required fields.</p>}
+    {valid ? <a className="button" onClick={onSave}>save</a> : <span className="button">save</span>}
   </div>
 );
 
@@ -42,6 +50,7 @@ Configure.propTypes = {
   selectedReaction: PropTypes.object.isRequired,
   handleName: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
+  valid: PropTypes.bool.isRequired,
   onSave: PropTypes.func.isRequired,
 };
 

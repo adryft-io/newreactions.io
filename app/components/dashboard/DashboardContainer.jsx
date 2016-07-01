@@ -57,7 +57,10 @@ class DashboardContainer extends React.Component {
   filterFormulas(channel) {
     fetch(`/api/v1/recipes?trigger_channel__is=${channel}`)
     .then(res => res.json())
-    .then(data => this.setState({ formulae: data.data }));
+    .then(data => this.setState({
+      formulae: data.data,
+      selectedFormula: {},
+    }));
   }
 
   render() {

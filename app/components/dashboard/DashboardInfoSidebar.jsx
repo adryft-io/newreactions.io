@@ -15,19 +15,19 @@ const DashboardInfoSidebar = ({ formulaInfo, deleteFormula }) => (
         <ul>
           <li>
             <span className="activelink">Name: </span>
-              {formulaInfo.trigger_name}
+            <p>{formulaInfo.trigger_name}</p>
           </li>
           <li>
             <span className="activelink">Created At: </span>
-            {moment(formulaInfo.created_at).fromNow()}
+            <p>{moment(formulaInfo.created_at).fromNow()}</p>
           </li>
           <li>
             <span className="activelink">Action Fields: </span>
-            {formulaInfo.action_fields}
+            <p>{formulaInfo.action_fields}</p>
           </li>
           <li>
             <span className="activelink">Action Name: </span>
-            {formulaInfo.action_name}
+            <p>{formulaInfo.action_name}</p>
           </li>
           <a
             className="button"

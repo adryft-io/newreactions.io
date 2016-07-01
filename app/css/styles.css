@@ -3,15 +3,20 @@ body{
   color: grey;
   font-size: 20px;
 }
+
+/* Links */
 .activelink {
   color: #69ceea;
   font-weight: bold;
 }
 a {
+  color: #69ceea;
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
 }
+
+
 .componentContainer {
   max-width: 100%;
   padding: 100px;
@@ -111,8 +116,12 @@ li {
   position: absolute;
 }
 
+.navigation {
+  bottom: 0;
+  position: absolute;
+  right: 20px;
+}
 .navigation li {
   display: inline;
   margin-right: 10px;
-  position: 
 }

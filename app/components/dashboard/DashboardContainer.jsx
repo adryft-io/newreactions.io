@@ -47,7 +47,7 @@ class DashboardContainer extends React.Component {
     )
     .then(() => this.setState({ selectedFormula: {} }))
     .then(() => this.getChannelsAndFormulas())
-    .catch(err => console.log(err));
+    .catch(err => console.warn(err));
   }
 
   filterFormulas(channel) {

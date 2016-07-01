@@ -1,8 +1,16 @@
 {
   "extends": "eslint-config-airbnb",
-  "parserOptions":{
+  "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true
     }
+  },
+  "rules": {
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn","error"]
+      }
+    ]
   }
 }

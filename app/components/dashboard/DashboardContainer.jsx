@@ -14,8 +14,10 @@ class DashboardContainer extends React.Component {
       selectedFormula: {},
     };
     this.getChannelsAndFormulas = this.getChannelsAndFormulas.bind(this);
+    this.deleteFormula = this.deleteFormula.bind(this);
     this.onSelectFormula = this.onSelectFormula.bind(this);
     this.onSelectChannel = this.onSelectChannel.bind(this);
+    this.filterFormulas = this.filterFormulas.bind(this);
   }
 
   componentDidMount() {
@@ -37,6 +39,17 @@ class DashboardContainer extends React.Component {
     .then(data => this.setState({ channels: getUniqueChannels(data), formulae: data.data }));
   }
 
+  deleteFormula(id) {
+    fetch(`http://localhost:8100/api/v1/recipes/${id}`,
+      {
+        method: 'DELETE',
+      }
+    )
+    .then(() => this.setState({ selectedFormula: {} }))
+    .then(() => this.getChannelsAndFormulas())
+    .catch(err => console.log(err));
+  }
+
   filterFormulas(channel) {
     fetch(`http://localhost:8100/api/v1/recipes?trigger_channel__is=${channel}`)
     .then(res => res.json())
@@ -55,7 +68,10 @@ class DashboardContainer extends React.Component {
           onSelectFormula={this.onSelectFormula}
         />
         <Sidebar>
-          <DashboardInfoSidebar formulaInfo={this.state.selectedFormula} />
+          <DashboardInfoSidebar
+            formulaInfo={this.state.selectedFormula}
+            deleteFormula={this.deleteFormula}
+          />
         </Sidebar>
       </div>
     );

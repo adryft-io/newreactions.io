@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import moment from 'moment';
 import _ from 'underscore';
 
-const DashboardInfoSidebar = ({ formulaInfo }) => (
+const DashboardInfoSidebar = ({ formulaInfo, deleteFormula }) => (
   <div>
     <h3>Formula information</h3>
     {_.isEmpty(formulaInfo)
@@ -29,6 +29,11 @@ const DashboardInfoSidebar = ({ formulaInfo }) => (
             <span className="activelink">Action Name: </span>
             {formulaInfo.action_name}
           </li>
+          <a
+            className="button"
+            onClick={() => { deleteFormula(formulaInfo.id); }}
+          >DELETE THIS ACTION
+          </a>
         </ul>
       </div>}
     <a href="#/select" className="button">Create a Formula</a>
@@ -37,6 +42,7 @@ const DashboardInfoSidebar = ({ formulaInfo }) => (
 
 DashboardInfoSidebar.propTypes = {
   formulaInfo: PropTypes.object.isRequired,
+  deleteFormula: PropTypes.func.isRequired,
 };
 
 export default DashboardInfoSidebar;

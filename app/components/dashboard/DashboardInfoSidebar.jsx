@@ -8,7 +8,7 @@ const DashboardInfoSidebar = ({ formulaInfo, deleteFormula }) => (
     {_.isEmpty(formulaInfo)
       ?
       <div className="space-top">
-        <span>Select a Formula to View Details or Create One Below!</span>
+        <p>Select a Formula to View Details</p>
       </div>
       :
       <div className="space-top">
@@ -36,7 +36,8 @@ const DashboardInfoSidebar = ({ formulaInfo, deleteFormula }) => (
           </a>
         </ul>
       </div>}
-    <a href="#/select" className="button">Create a Formula</a>
+    <span className="divider" />
+    <a href="#/select" className="button space-top">Create a Formula</a>
   </div>
 );
 

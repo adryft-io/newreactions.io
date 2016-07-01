@@ -28,7 +28,8 @@ const Create = ({
       </div>
     ))}
 
-    {selectedAction && selectedReaction ? null :
+    {selectedAction && selectedReaction ?
+      null :
       <p>please choose both an action <em>and</em> a reaction</p>
     }
 

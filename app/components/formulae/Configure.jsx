@@ -40,7 +40,7 @@ const Configure = ({
       ))
     }
 
-    {!valid ? <p>please fill out all required fields.</p> : null}
+    {valid ? null : <p>please fill out all required fields.</p>}
     {valid ? <a className="button" onClick={onSave}>save</a> : <span className="button">save</span>}
   </div>
 );

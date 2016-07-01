@@ -22,7 +22,7 @@ class App extends React.Component {
     .then(res => res.json())
     .then(data => {
       if (data.message === '401') {
-        // replace('/sign-in');
+        replace('/sign-in');
         next();
       } else {
         next();

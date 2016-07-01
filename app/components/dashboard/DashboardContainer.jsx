@@ -35,7 +35,7 @@ class DashboardContainer extends React.Component {
   }
 
   getChannelsAndFormulas() {
-    fetch('http://localhost:8100/api/v1/recipes?trigger_channel__not=null')
+    fetch('/api/v1/recipes?trigger_channel__not=null')
     .then(res => res.json())
     .then(data => this.setState({
       channels: getUniqueChannels(data),
@@ -44,7 +44,7 @@ class DashboardContainer extends React.Component {
   }
 
   deleteFormula(id) {
-    fetch(`http://localhost:8100/api/v1/recipes/${id}`,
+    fetch(`/api/v1/recipes/${id}`,
       {
         method: 'DELETE',
       }
@@ -55,7 +55,7 @@ class DashboardContainer extends React.Component {
   }
 
   filterFormulas(channel) {
-    fetch(`http://localhost:8100/api/v1/recipes?trigger_channel__is=${channel}`)
+    fetch(`/api/v1/recipes?trigger_channel__is=${channel}`)
     .then(res => res.json())
     .then(data => this.setState({ formulae: data.data }));
   }

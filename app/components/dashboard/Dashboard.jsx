@@ -4,33 +4,32 @@ import { listChannels, listFormulae } from './DashboardHelpers.js';
 const Dashboard = ({
   channels,
   formulae,
-  selectedChannel,
-  selectedFormula,
   onSelectChannel,
   onSelectFormula,
 }) => (
-  <div>
+  <div className="nine columns componentContainer">
     <div>
       <h3>Welcome Esther,</h3>
       <p>This is your personal dashboard. You may browse your formulae below.
-      You may also use the channels to find what you are looking for.</p>
-      <span className="divider"></span>
+      You may also use the channels to find what you are looking for.
+        <span className="divider"></span>
+      </p>
     </div>
-    <div>
-      <h3>Choose a Channel ({selectedChannel})</h3>
-      <div className="row">
-        <div className="col-4">
-          <ul>
+    <div className="row space-top">
+      <div>
+        <div className="four columns">
+          <h3>Channel</h3>
+          <ul className="offset">
             {listChannels(channels, onSelectChannel)}
           </ul>
         </div>
-        <h3>Choose Formula For Details ({selectedFormula.trigger_name})</h3>
-        <div className="col-4">
+        <div className="four columns">
+          <h3>Formulae</h3>
           <ul>
             {listFormulae(formulae, onSelectFormula, formulae.length / 2)}
           </ul>
         </div>
-        <div className="col-4">
+        <div className="four columns">
           <ul>
             {listFormulae(formulae, onSelectFormula, 0, formulae.length / 2)}
           </ul>

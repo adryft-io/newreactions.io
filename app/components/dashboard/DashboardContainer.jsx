@@ -45,7 +45,7 @@ class DashboardContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="row">
         <Dashboard
           channels={this.state.channels}
           formulae={this.state.formulae}

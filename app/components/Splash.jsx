@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 const Splash = (props) => (
-  <div>
+  <div className="eight columns">
     <h1>{props.title}</h1>
     <h2>{props.subtitle}</h2>
   </div>

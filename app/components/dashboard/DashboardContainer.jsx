@@ -37,7 +37,10 @@ class DashboardContainer extends React.Component {
   getChannelsAndFormulas() {
     fetch('http://localhost:8100/api/v1/recipes?trigger_channel__not=null')
     .then(res => res.json())
-    .then(data => this.setState({ channels: getUniqueChannels(data), formulae: data.data }));
+    .then(data => this.setState({
+      channels: getUniqueChannels(data),
+      formulae: data.data,
+    }));
   }
 
   deleteFormula(id) {

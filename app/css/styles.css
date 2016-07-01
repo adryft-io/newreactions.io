@@ -10,7 +10,7 @@ body{
   font-weight: bold;
 }
 a {
-  color: #69ceea;
+  color: #f6ae73;
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
@@ -103,7 +103,7 @@ li {
   margin: 0;
 }
 .sidebarLineTwo{
-  border-left: solid 1px grey;
+  border-left: solid 1px lightgrey;
   height: inherit;
   margin: 0;
 }
@@ -119,10 +119,10 @@ li {
 .navigation {
   top: 0;
   position: absolute;
-  right: 20px;
+  right: 310px;
   text-align: right;
 }
 .navigation li {
-  display: inline;
+  /*display: inline;*/
   margin-right: 10px;
 }

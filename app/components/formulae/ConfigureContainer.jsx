@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { hashHistory } from 'react-router';
 import Configure from './Configure.jsx';
 import Sidebar from '../Sidebar.jsx';
 import InfoSidebar from './InfoSidebar.jsx';
@@ -71,10 +72,11 @@ class ConfigureContainer extends Component {
       },
       body: JSON.stringify(formula),
     })
-    .then(response => {
-      console.log(response);
+    .then(() => {
+      hashHistory.push('/dashboard');
     })
     .catch(err => {
+      // TODO: give error feedback in UI
       console.error(err);
     });
   }

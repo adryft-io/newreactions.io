@@ -12,6 +12,7 @@ class DashboardContainer extends React.Component {
       formulae: [],
       selectedChannel: null,
       selectedFormula: {},
+      user: null,
     };
     this.getChannelsAndFormulas = this.getChannelsAndFormulas.bind(this);
     this.deleteFormula = this.deleteFormula.bind(this);

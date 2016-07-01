@@ -5,7 +5,7 @@ class MainContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: null,
+      user: { data: { name: '', id: '' } },
     };
   }
 
@@ -19,6 +19,7 @@ class MainContainer extends React.Component {
     fetch('/api/v1/auth/verify', { credentials: 'include' })
     .then(res => res.json())
     .then(data => {
+      console.log('data from MainContainer.jsx', data);
       this.setState({ user: { data } });
     });
   }

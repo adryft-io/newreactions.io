@@ -7,14 +7,30 @@ const DashboardInfoSidebar = ({ formulaInfo }) => (
     <h3>Formula information</h3>
     {_.isEmpty(formulaInfo)
       ?
-      <p>Select a Formula to View Details or Create One Below!</p>
+      <div className="space-top">
+        <span>Select a Formula to View Details or Create One Below!</span>
+      </div>
       :
-      <ul>
-        <li>Name: {formulaInfo.trigger_name}</li>
-        <li>Created At: {moment(formulaInfo.created_at).fromNow()}</li>
-        <li>Action Fields: {formulaInfo.action_fields}</li>
-        <li>Action Name: {formulaInfo.action_name}</li>
-      </ul>}
+      <div className="space-top">
+        <ul>
+          <li>
+            <span className="activelink">Name: </span>
+              {formulaInfo.trigger_name}
+          </li>
+          <li>
+            <span className="activelink">Created At: </span>
+            {moment(formulaInfo.created_at).fromNow()}
+          </li>
+          <li>
+            <span className="activelink">Action Fields: </span>
+            {formulaInfo.action_fields}
+          </li>
+          <li>
+            <span className="activelink">Action Name: </span>
+            {formulaInfo.action_name}
+          </li>
+        </ul>
+      </div>}
     <a href="#/select" className="button">Create a Formula</a>
   </div>
 );

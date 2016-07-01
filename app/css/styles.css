@@ -5,6 +5,7 @@ body{
 }
 .activelink {
   color: #69ceea;
+  font-weight: bold;
 }
 .componentContainer {
   max-width: 100%;
@@ -77,3 +78,6 @@ li {
 }
 
 /* sidebar */
+.sidebar {
+
+}

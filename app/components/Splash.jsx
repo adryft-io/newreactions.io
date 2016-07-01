@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const Splash = (props) => (
   <div className="eight columns">
@@ -6,5 +6,10 @@ const Splash = (props) => (
     <h2>{props.subtitle}</h2>
   </div>
 );
+
+Splash.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+};
 
 export default Splash;

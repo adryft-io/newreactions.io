@@ -9,9 +9,15 @@ class ConfigureContainer extends Component {
     super(props);
 
     this.state = {
+      valid: false,
       loading: true,
       selectedAction: null,
       selectedReaction: null,
+      formula: {
+        name: '',
+        trigger_fields: {},
+        action_fields: {},
+      },
     };
 
     this.handleName = this.handleName.bind(this);
@@ -42,11 +48,6 @@ class ConfigureContainer extends Component {
             type: 'text',
             label: 'Message',
           }],
-        },
-        formula: {
-          name: '',
-          trigger_fields: {},
-          action_fields: {},
         },
       });
     }, 250);
@@ -82,12 +83,13 @@ class ConfigureContainer extends Component {
   }
 
   handleName(name) {
-    this.setState({ formula: { ...this.state.formula, name } });
+    this.setState({ formula: { ...this.state.formula, name }, valid: name.length > 0 });
   }
 
   handleChange(formulaPart, fieldName, fieldValue) {
     // TODO: state should be treated as immutable
     this.state.formula[`${formulaPart}_fields`][fieldName] = fieldValue;
+    this.setState({ valid: fieldValue.length > 0 });
   }
 
   render() {
@@ -101,6 +103,7 @@ class ConfigureContainer extends Component {
           selectedReaction={this.state.selectedReaction}
           handleName={this.handleName}
           handleChange={this.handleChange}
+          valid={this.state.valid}
           onSave={this.onSave}
         />
         <Sidebar>

@@ -20,7 +20,7 @@ const Dashboard = ({
     <div className="row space-top">
       <div>
         <div className="four columns">
-          <h3>Channel</h3>
+          <h3>Channels</h3>
           <ul className="offset">
             {listChannels(channels, onSelectChannel, selectedChannel)}
           </ul>

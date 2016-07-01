@@ -117,11 +117,11 @@ li {
 }
 
 .navigation {
-  bottom: 0;
+  top: 0;
   position: absolute;
   right: 20px;
+  text-align: right;
 }
 .navigation li {
-  display: inline;
   margin-right: 10px;
 }

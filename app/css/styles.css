@@ -123,5 +123,6 @@ li {
   text-align: right;
 }
 .navigation li {
+  display: inline;
   margin-right: 10px;
 }

@@ -12,7 +12,7 @@ const Dashboard = ({
   <div className="nine columns componentContainer">
     <div>
       <h3>Welcome {context.user ? context.user.data.name : ''},</h3>
-      <p>This is your personal dashboard. You may browse your formulae below.
+      <p className="offset">This is your personal dashboard. You may browse your formulae below.
       You may also use the channels to find what you are looking for.
         <span className="divider"></span>
       </p>
@@ -25,8 +25,8 @@ const Dashboard = ({
             {listChannels(channels, onSelectChannel, selectedChannel)}
           </ul>
         </div>
+        <h3>Formulae</h3>
         <div className="four columns">
-          <h3>Formulae</h3>
           <ul>
             {listFormulae(formulae, onSelectFormula, selectedFormula, formulae.length / 2)}
           </ul>

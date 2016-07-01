@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const Nav = () => (
-  <div className="four columns">
+  <div>
     <ul>
       <li><Link to="/manifesto">manifesto</Link></li>
       <li><Link to="/about">about</Link></li>

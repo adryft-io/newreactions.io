@@ -4,10 +4,10 @@ import Nav from './Nav.jsx';
 class MainContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      user: { data: { name: '', id: '' } },
-    };
+    this.state = { user: null };
+    this.signOut = this.signOut.bind(this);
   }
+
 
   getChildContext() {
     return {
@@ -18,10 +18,22 @@ class MainContainer extends React.Component {
   componentDidMount() {
     fetch('/api/v1/auth/verify', { credentials: 'include' })
     .then(res => res.json())
-    .then(data => {
-      console.log('data from MainContainer.jsx', data);
-      this.setState({ user: { data } });
+    .then((data) => {
+      if (data.name) {
+        localStorage.setItem('name', data.name);
+        this.setState({ user: data });
+      } else {
+        localStorage.clear();
+        this.setState({ user: null });
+      }
     });
+  }
+
+  signOut() {
+    fetch('/api/v1/auth/logout', { credentials: 'include' })
+    .catch(err => console.warn(err))
+    .then(() => localStorage.clear('name'))
+    .then(() => this.setState({ user: null }));
   }
 
   render() {
@@ -31,7 +43,7 @@ class MainContainer extends React.Component {
           <div className="nine columns sidebarLineOne"></div>
           <div className="three columns sidebarLineTwo">
             <div className="navigation">
-              <Nav />
+              <Nav signOut={this.signOut} user={this.state.user} />
             </div>
           </div>
         </div>
@@ -45,6 +57,7 @@ class MainContainer extends React.Component {
 }
 
 MainContainer.propTypes = { children: React.PropTypes.object };
+
 MainContainer.childContextTypes = {
   user: PropTypes.object,
 };

@@ -18,16 +18,10 @@ class App extends React.Component {
   }
 
   requireAuth(nextState, replace, next) {
-    fetch('/api/v1/auth/verify', { credentials: 'include' })
-    .then(res => res.json())
-    .then(data => {
-      if (data.message === '401') {
-        replace('/sign-in');
-        next();
-      } else {
-        next();
-      }
-    });
+    if (!localStorage.getItem('name')) {
+      replace('sign-in');
+    }
+    next();
   }
 
   render() {
@@ -35,7 +29,11 @@ class App extends React.Component {
       <Router history={hashHistory}>
         <Route path="/" component={MainContainer}>
           <IndexRoute component={Home} />
-          <Route path="dashboard" component={DashboardContainer} onEnter={this.requireAuth} />
+          <Route
+            path="dashboard"
+            component={DashboardContainer}
+
+          />
           <Route path="sign-in" component={SignIn} />
           <Route path="about" component={AboutContainer} />
           <Route path="manifesto" component={ManifestoContainer} />

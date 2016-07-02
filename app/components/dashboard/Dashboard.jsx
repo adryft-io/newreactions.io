@@ -8,10 +8,10 @@ const Dashboard = ({
   selectedFormula,
   onSelectChannel,
   onSelectFormula,
-}, context) => (
+}) => (
   <div className="nine columns componentContainer">
     <div>
-      <h3>Welcome {context.user ? context.user.data.name : ''},</h3>
+      <h3>Welcome {localStorage.getItem('name') ? localStorage.getItem('name') : ''},</h3>
       <p className="offset">This is your personal dashboard. You may browse your formulae below.
       You may also use the channels to find what you are looking for.
         <span className="divider"></span>
@@ -48,10 +48,6 @@ Dashboard.propTypes = {
   selectedFormula: PropTypes.object,
   onSelectChannel: PropTypes.func.isRequired,
   onSelectFormula: PropTypes.func.isRequired,
-};
-
-Dashboard.contextTypes = {
-  user: PropTypes.object,
 };
 
 export default Dashboard;

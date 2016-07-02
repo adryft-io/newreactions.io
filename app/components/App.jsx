@@ -22,11 +22,8 @@ class App extends React.Component {
     .then(res => res.json())
     .then((data) => {
       if (data.name) {
-        console.warn(data);
         localStorage.setItem('user.name', data.name);
         localStorage.setItem('user.id', data.id);
-        console.warn(localStorage.getItem('user.name'));
-        console.warn(localStorage.getItem('user.id'));
       } else {
         localStorage.clear();
         replace('sign-in');

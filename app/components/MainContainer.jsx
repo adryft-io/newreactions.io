@@ -54,7 +54,7 @@ class MainContainer extends React.Component {
         <div className="navigation">
           <Nav signOut={this.signOut} user={this.state.user} />
         </div>
-        <div className="content">
+        <div className="row content">
         {this.props.children}
         </div>
       </div>

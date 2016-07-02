@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Manifesto = () => (
-  <div>
+  <div className="nine columns componentContainer">
     <h3>Manifesto</h3>
     <div>
       <p className="manifesto-one">The manifesto first column</p>

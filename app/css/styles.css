@@ -2,29 +2,29 @@ body{
   background-color: #f4f3ef;
   color: grey;
   font-size: 20px;
-  background: linear-gradient(46deg, #f4f3ef, #d2e3f2, #f4f3ef, #f5c389, #fbc9c9);
-  background-size: 1000% 1000%;
+  background: linear-gradient(128deg, #f2eee9, #ffffff, #f5eee7, #f9f7f3);
+  background-size: 800% 800%;
 
-  -webkit-animation: AnimationName 12s ease infinite;
-  -moz-animation: AnimationName 12s ease infinite;
-  animation: AnimationName 12s ease infinite;
+  -webkit-animation: AnimationName 13s ease infinite;
+  -moz-animation: AnimationName 13s ease infinite;
+  animation: AnimationName 13s ease infinite;
 
 }
 
 @-webkit-keyframes AnimationName {
-    0%{background-position:0% 94%}
-    50%{background-position:100% 7%}
-    100%{background-position:0% 94%}
+    0%{background-position:0% 84%}
+    50%{background-position:100% 17%}
+    100%{background-position:0% 84%}
 }
 @-moz-keyframes AnimationName {
-    0%{background-position:0% 94%}
-    50%{background-position:100% 7%}
-    100%{background-position:0% 94%}
+    0%{background-position:0% 84%}
+    50%{background-position:100% 17%}
+    100%{background-position:0% 84%}
 }
 @keyframes AnimationName {
-    0%{background-position:0% 94%}
-    50%{background-position:100% 7%}
-    100%{background-position:0% 94%}
+    0%{background-position:0% 84%}
+    50%{background-position:100% 17%}
+    100%{background-position:0% 84%}
 }
 
 /* Parents of the world */
@@ -51,6 +51,10 @@ a {
   padding: 100px;
   padding-right:100px;
 }
+
+.manifesto-one, .manifesto-two {
+  width: 50%;
+}
 /* offset  and margins */
 
 .offset {
@@ -70,6 +74,23 @@ h1, h2, h3, h4, p {
 h1, h2 {
   margin-left: 100px;
 }
+
+.cursor {
+  animation: Blink 1s ease-in 0s infinite;
+  font-size: 80px;
+  color: #69ceea;
+  font-weight: bold;
+  /*position: absolute;
+  left: 107px;
+  top: -23px;*/
+}
+
+@keyframes Blink {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+
 h1 {
   color: #f6ae73;
   font-size: 70px;

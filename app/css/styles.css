@@ -2,6 +2,35 @@ body{
   background-color: #f4f3ef;
   color: grey;
   font-size: 20px;
+  background: linear-gradient(128deg, #f2eee9, #ffffff, #f5eee7, #f9f7f3);
+  background-size: 800% 800%;
+
+  -webkit-animation: AnimationName 13s ease infinite;
+  -moz-animation: AnimationName 13s ease infinite;
+  animation: AnimationName 13s ease infinite;
+
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 84%}
+    50%{background-position:100% 17%}
+    100%{background-position:0% 84%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 84%}
+    50%{background-position:100% 17%}
+    100%{background-position:0% 84%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 84%}
+    50%{background-position:100% 17%}
+    100%{background-position:0% 84%}
+}
+
+/* Parents of the world */
+.content * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Links */
@@ -10,7 +39,7 @@ body{
   font-weight: bold;
 }
 a {
-  color: #69ceea;
+  color: #f6ae73;
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
@@ -21,6 +50,10 @@ a {
   max-width: 100%;
   padding: 100px;
   padding-right:100px;
+}
+
+.manifesto-one, .manifesto-two {
+  width: 50%;
 }
 /* offset  and margins */
 
@@ -41,6 +74,23 @@ h1, h2, h3, h4, p {
 h1, h2 {
   margin-left: 100px;
 }
+
+.cursor {
+  animation: Blink 1s ease-in 0s infinite;
+  font-size: 80px;
+  color: #69ceea;
+  font-weight: bold;
+  /*position: absolute;
+  left: 107px;
+  top: -23px;*/
+}
+
+@keyframes Blink {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+
 h1 {
   color: #f6ae73;
   font-size: 70px;
@@ -97,32 +147,30 @@ li {
   padding-left:50px;
   margin:0;
 }
-
 .sidebarLineOne{
   height: inherit;
   margin: 0;
 }
 .sidebarLineTwo{
-  border-left: solid 1px grey;
+  border-left: solid 1px lightgrey;
   height: inherit;
   margin: 0;
 }
-
-.sidebarDiv {
-  z-index: -1;
+.sidebarDiv { /*daddy*/
   width: 100%;
   height: 100%;
   top: 0;
   position: absolute;
 }
 
-.navigation {
-  top: 0;
-  position: absolute;
-  right: 20px;
+.navigation { /*bae*/
+  position: relative;
+  z-index: 2;
   text-align: right;
+  margin-top: 20px;
+  float:right;
 }
 .navigation li {
-  display: inline;
-  margin-right: 10px;
+  /*display: inline;*/
+  margin-right: 20px;
 }

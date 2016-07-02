@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import moment from 'moment';
 import _ from 'underscore';
+import { listActions } from './DashboardHelpers.js';
 
 const DashboardInfoSidebar = ({ formulaInfo, deleteFormula }) => (
   <div>
@@ -23,7 +24,7 @@ const DashboardInfoSidebar = ({ formulaInfo, deleteFormula }) => (
           </li>
           <li>
             <span className="activelink">Action Fields: </span>
-            <p>{formulaInfo.action_fields}</p>
+            {listActions(formulaInfo.action_fields)}
           </li>
           <li>
             <span className="activelink">Action Name: </span>

@@ -15,8 +15,8 @@ class ConfigureContainer extends Component {
       selectedReaction: null,
       formula: {
         name: '',
-        trigger_fields: {},
-        action_fields: {},
+        actionFields: {},
+        reactionFields: {},
       },
     };
 
@@ -56,13 +56,13 @@ class ConfigureContainer extends Component {
   onSave() {
     const formula = {
       name: '',
-      trigger_channel: 'gmail',
-      trigger_name: 'new-important',
-      trigger_fields: JSON.stringify(this.state.formula.trigger_fields),
-      action_channel: 'twilio',
-      action_name: 'sms',
-      action_fields: JSON.stringify(this.state.formula.action_fields),
-      user_id: localStorage.getItem('user.id'),
+      actionChannel: 'gmail',
+      actionName: 'new-important',
+      actionFields: JSON.stringify(this.state.formula.actionFields),
+      reactionChannel: 'twilio',
+      reactionName: 'sms',
+      reactionFields: JSON.stringify(this.state.formula.reactionFields),
+      userId: localStorage.getItem('user.id'),
     };
 
     fetch('/api/v1/recipes', {
@@ -88,7 +88,7 @@ class ConfigureContainer extends Component {
 
   handleChange(formulaPart, fieldName, fieldValue) {
     // TODO: state should be treated as immutable
-    this.state.formula[`${formulaPart}_fields`][fieldName] = fieldValue;
+    this.state.formula[`${formulaPart}Fields`][fieldName] = fieldValue;
     this.setState({ valid: fieldValue.length > 0 });
   }
 

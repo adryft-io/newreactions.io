@@ -65,7 +65,7 @@ class ConfigureContainer extends Component {
       userId: localStorage.getItem('user.id'),
     };
 
-    fetch('/api/v1/recipes', {
+    fetch('/api/v1/formulae', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

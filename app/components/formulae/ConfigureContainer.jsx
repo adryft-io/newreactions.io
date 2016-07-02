@@ -62,7 +62,7 @@ class ConfigureContainer extends Component {
       action_channel: 'twilio',
       action_name: 'sms',
       action_fields: JSON.stringify(this.state.formula.action_fields),
-      user_id: 1,
+      user_id: localStorage.getItem('user.id'),
     };
 
     fetch('/api/v1/recipes', {

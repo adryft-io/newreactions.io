@@ -42,7 +42,11 @@ class MainContainer extends React.Component {
     return (
       <div>
         <div className="row sidebarDiv">
-          <div className="nine columns sidebarLineOne"></div>
+          <div className="nine columns sidebarLineOne">
+            <div className="navigation">
+              <Nav />
+            </div>
+          </div>
           <div className="three columns sidebarLineTwo">
           </div>
         </div>
@@ -50,7 +54,7 @@ class MainContainer extends React.Component {
         <div className="navigation">
           <Nav signOut={this.signOut} user={this.state.user} />
         </div>
-        <div>
+        <div className="content">
         {this.props.children}
         </div>
       </div>

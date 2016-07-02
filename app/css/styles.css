@@ -2,6 +2,35 @@ body{
   background-color: #f4f3ef;
   color: grey;
   font-size: 20px;
+  background: linear-gradient(46deg, #f4f3ef, #d2e3f2, #f4f3ef, #f5c389, #fbc9c9);
+  background-size: 1000% 1000%;
+
+  -webkit-animation: AnimationName 12s ease infinite;
+  -moz-animation: AnimationName 12s ease infinite;
+  animation: AnimationName 12s ease infinite;
+
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
+}
+
+/* Parents of the world */
+.content * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Links */
@@ -97,7 +126,6 @@ li {
   padding-left:50px;
   margin:0;
 }
-
 .sidebarLineOne{
   height: inherit;
   margin: 0;
@@ -107,22 +135,21 @@ li {
   height: inherit;
   margin: 0;
 }
-
-.sidebarDiv {
-  z-index: -1;
+.sidebarDiv { /*daddy*/
   width: 100%;
   height: 100%;
   top: 0;
   position: absolute;
 }
 
-.navigation {
-  top: 0;
-  position: absolute;
-  right: 310px;
+.navigation { /*bae*/
+  position: relative;
+  z-index: 2;
   text-align: right;
+  margin-top: 20px;
+  float:right;
 }
 .navigation li {
   /*display: inline;*/
-  margin-right: 10px;
+  margin-right: 20px;
 }

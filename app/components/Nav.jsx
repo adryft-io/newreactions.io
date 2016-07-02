@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 const Nav = ({ signOut }) => (
-  <div>
+  <div className="nav">
     <ul>
       {localStorage.getItem('user.id') ?
         <div>

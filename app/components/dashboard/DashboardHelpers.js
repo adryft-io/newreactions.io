@@ -28,6 +28,17 @@ const listFormulae = (formulae, callback, selectedFormula, start, end) =>
     </div>
 ));
 
+const listActions = (actionString) =>
+  _.map(JSON.parse(actionString), (action, index) => (
+    <div key={index}>
+      <p>
+        {`${index}: ${action}`}
+      </p>
+    </div>
+  )
+);
+
 module.exports.getUniqueChannels = getUniqueChannels;
 module.exports.listChannels = listChannels;
 module.exports.listFormulae = listFormulae;
+module.exports.listActions = listActions;

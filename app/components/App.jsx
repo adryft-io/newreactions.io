@@ -32,7 +32,6 @@ class App extends React.Component {
           <Route
             path="dashboard"
             component={DashboardContainer}
-
           />
           <Route path="sign-in" component={SignIn} />
           <Route path="about" component={AboutContainer} />

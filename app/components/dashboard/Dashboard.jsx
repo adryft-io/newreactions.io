@@ -11,7 +11,7 @@ const Dashboard = ({
 }) => (
   <div className="nine columns componentContainer">
     <div>
-      <h3>Welcome {localStorage.getItem('name') ? localStorage.getItem('name') : ''},</h3>
+      <h3>Welcome {localStorage.getItem('user.name')},</h3>
       <p className="offset">This is your personal dashboard. You may browse your formulae below.
       You may also use the channels to find what you are looking for.
         <span className="divider"></span>

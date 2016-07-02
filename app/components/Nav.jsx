@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const Nav = ({ signOut }) => (
   <div>
     <ul>
-      {localStorage.getItem('name') ?
+      {localStorage.getItem('user.id') ?
         <div>
           <li><Link to="/manifesto">Manifesto</Link></li>
           <li><Link to="/dashboard">Dashboard</Link></li>

@@ -35,7 +35,7 @@ class DashboardContainer extends React.Component {
   }
 
   getChannelsAndFormulas() {
-    fetch(`/api/v1/formulae?actionChannel__not=null&user_id=${localStorage.getItem('user.id')}`)
+    fetch(`/api/v1/formulae?action_channel__not=null&user_id=${localStorage.getItem('user.id')}`)
     .then(res => res.json())
     .then(data => this.setState({
       channels: getUniqueChannels(data),
@@ -55,7 +55,7 @@ class DashboardContainer extends React.Component {
   }
 
   filterFormulas(channel) {
-    fetch(`/api/v1/formulae?actionChannel__is=${channel}`)
+    fetch(`/api/v1/formulae?action_channel__is=${channel}`)
     .then(res => res.json())
     .then(data => this.setState({
       formulae: data.data,

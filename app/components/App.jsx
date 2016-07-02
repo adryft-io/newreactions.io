@@ -52,7 +52,7 @@ class App extends React.Component {
             onEnter={this.requireAuth}
           />
           <Route
-            path="formulae/create/:actionChannel"
+            path="formulae/create/:action_channel"
             component={CreateContainer}
             onEnter={this.requireAuth}
           />

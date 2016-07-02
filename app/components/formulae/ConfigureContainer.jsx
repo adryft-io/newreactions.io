@@ -15,8 +15,8 @@ class ConfigureContainer extends Component {
       selectedReaction: null,
       formula: {
         name: '',
-        actionFields: {},
-        reactionFields: {},
+        action_fields: {},
+        reaction_fields: {},
       },
     };
 
@@ -56,13 +56,13 @@ class ConfigureContainer extends Component {
   onSave() {
     const formula = {
       name: '',
-      actionChannel: 'gmail',
-      actionName: 'new-important',
-      actionFields: JSON.stringify(this.state.formula.actionFields),
-      reactionChannel: 'twilio',
-      reactionName: 'sms',
-      reactionFields: JSON.stringify(this.state.formula.reactionFields),
-      userId: localStorage.getItem('user.id'),
+      action_channel: 'gmail',
+      action_name: 'new-important',
+      action_fields: JSON.stringify(this.state.formula.action_fields),
+      reaction_channel: 'twilio',
+      reaction_name: 'sms',
+      reaction_fields: JSON.stringify(this.state.formula.reaction_fields),
+      user_id: localStorage.getItem('user.id'),
     };
 
     fetch('/api/v1/formulae', {

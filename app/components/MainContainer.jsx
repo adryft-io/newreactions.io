@@ -20,19 +20,21 @@ class MainContainer extends React.Component {
     .then(res => res.json())
     .then((data) => {
       if (data.name) {
-        localStorage.setItem('name', data.name);
+        localStorage.setItem('user.name', data.name);
+        localStorage.setItem('user.id', data.id);
         this.setState({ user: data });
       } else {
         localStorage.clear();
         this.setState({ user: null });
       }
-    });
+    })
+    .catch(err => console.error(err));
   }
 
   signOut() {
     fetch('/api/v1/auth/logout', { credentials: 'include' })
     .catch(err => console.warn(err))
-    .then(() => localStorage.clear('name'))
+    .then(() => localStorage.clear())
     .then(() => this.setState({ user: null }));
   }
 

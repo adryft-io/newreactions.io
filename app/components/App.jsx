@@ -18,10 +18,22 @@ class App extends React.Component {
   }
 
   requireAuth(nextState, replace, next) {
-    if (!localStorage.getItem('name')) {
-      replace('sign-in');
-    }
-    next();
+    fetch('/api/v1/auth/verify', { credentials: 'include' })
+    .then(res => res.json())
+    .then((data) => {
+      if (data.name) {
+        console.warn(data);
+        localStorage.setItem('user.name', data.name);
+        localStorage.setItem('user.id', data.id);
+        console.warn(localStorage.getItem('user.name'));
+        console.warn(localStorage.getItem('user.id'));
+      } else {
+        localStorage.clear();
+        replace('sign-in');
+      }
+    })
+    .then(() => next())
+    .catch(err => console.error(err));
   }
 
   render() {
@@ -32,6 +44,7 @@ class App extends React.Component {
           <Route
             path="dashboard"
             component={DashboardContainer}
+            onEnter={this.requireAuth}
           />
           <Route path="sign-in" component={SignIn} />
           <Route path="about" component={AboutContainer} />

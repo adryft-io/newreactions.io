@@ -3,7 +3,7 @@ import _ from 'underscore';
 
 
 const getUniqueChannels = (data) => _.uniq(_.reduce(data.data, (prev, curr) => {
-  prev.push(curr.trigger_channel);
+  prev.push(curr.action_channel);
   return prev;
 }, []));
 
@@ -23,7 +23,7 @@ const listFormulae = (formulae, callback, selectedFormula, start, end) =>
   .map((formula, index) => (
     <div key={index} onClick={() => { callback(formula); }}>
       <li className={selectedFormula === formula ? 'activelink' : ''}>
-        {formula.trigger_name}
+        {formula.action_name}
       </li>
     </div>
 ));

@@ -20,7 +20,7 @@ const Configure = ({
       selectedAction.fields.map((field, index) => (
         <div key={index}>
           <h3>{field.name}</h3>
-          <input onChange={(e) => { handleChange('trigger', field.name, e.target.value); }} />
+          <input onChange={(e) => { handleChange('action', field.name, e.target.value); }} />
           <span className="divider" />
         </div>
       ))
@@ -34,7 +34,7 @@ const Configure = ({
       selectedReaction.fields.map((field, index) => (
         <div key={index}>
           <h3>{field.name}</h3>
-          <input onChange={(e) => { handleChange('action', field.name, e.target.value); }} />
+          <input onChange={(e) => { handleChange('reaction', field.name, e.target.value); }} />
           <span className="divider" />
         </div>
       ))

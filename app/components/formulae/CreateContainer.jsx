@@ -10,7 +10,7 @@ class CreateContainer extends Component {
 
     this.state = {
       loading: true,
-      channel: props.params.actionChannel,
+      channel: props.params.action_channel,
       selectedAction: null,
       selectedReaction: null,
       actions: [],

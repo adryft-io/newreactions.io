@@ -16,7 +16,7 @@ const DashboardInfoSidebar = ({ formulaInfo, deleteFormula }) => (
         <ul>
           <li>
             <span className="activelink">Name: </span>
-            <p>{formulaInfo.trigger_name}</p>
+            <p>{formulaInfo.action_name}</p>
           </li>
           <li>
             <span className="activelink">Created At: </span>
@@ -24,11 +24,11 @@ const DashboardInfoSidebar = ({ formulaInfo, deleteFormula }) => (
           </li>
           <li>
             <span className="activelink">Action Fields: </span>
-            {listActions(formulaInfo.action_fields)}
+            {listActions(formulaInfo.reaction_fields)}
           </li>
           <li>
             <span className="activelink">Action Name: </span>
-            <p>{formulaInfo.action_name}</p>
+            <p>{formulaInfo.reaction_name}</p>
           </li>
           <a
             className="button"

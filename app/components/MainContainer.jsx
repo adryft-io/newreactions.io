@@ -1,3 +1,4 @@
+  // TODO: if you click the logo while logged in send user to dashboard
 import React, { PropTypes } from 'react';
 import Nav from './Nav.jsx';
 

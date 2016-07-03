@@ -1,13 +1,13 @@
 body{
   background-color: #f4f3ef;
-  color: grey;
-  font-size: 20px;
-  background: linear-gradient(128deg, #f2eee9, #ffffff, #f5eee7, #f9f7f3);
+  color: white;
+  font-size: 18px;
+  background: linear-gradient(89deg, #38dfca, #388ddf, #9c38df, #df386a, #ecb036);
   background-size: 800% 800%;
 
-  -webkit-animation: AnimationName 13s ease infinite;
-  -moz-animation: AnimationName 13s ease infinite;
-  animation: AnimationName 13s ease infinite;
+  -webkit-animation: AnimationName 25s ease infinite;
+  -moz-animation: AnimationName 25s ease infinite;
+  animation: AnimationName 25s ease infinite;
 
 }
 
@@ -26,6 +26,22 @@ body{
     50%{background-position:100% 17%}
     100%{background-position:0% 84%}
 }
+/* cursor animation homepage */
+.cursor {
+  animation: Blink 1s ease-in 0s infinite;
+  font-size: 80px;
+  color: white;
+  font-weight: bold;
+  /*position: absolute;
+  left: 107px;
+  top: -23px;*/
+}
+
+@keyframes Blink {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
 
 /* Parents of the world */
 .content * {
@@ -35,15 +51,23 @@ body{
 
 /* Links */
 .activelink {
-  color: #69ceea;
   font-weight: bold;
+  border-bottom: 1px solid white;
+  padding: 10px;
+
 }
 a {
-  color: #f6ae73;
+  color:white;
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
 }
+
+a:hover {
+  color:white;
+  opacity: 0.5;
+}
+
 
 
 .componentContainer {
@@ -55,8 +79,33 @@ a {
 .manifesto-one, .manifesto-two {
   width: 50%;
 }
-/* offset  and margins */
+/* buttons */
 
+.configure {
+  position: relative;
+  float: right;
+}
+
+button, .button {
+  height: 10px;
+  border: none;
+  color: white;
+}
+
+.button:hover {
+  color:white;
+  opacity: 0.5;
+}
+button:hover {
+  color:white;
+  opacity:0.5;
+}
+
+
+/* offset  and margins and bold */
+.bold {
+  font-weight: bold;
+}
 .offset {
   padding-left: 50px;
 }
@@ -75,38 +124,29 @@ h1, h2 {
   margin-left: 100px;
 }
 
-.cursor {
-  animation: Blink 1s ease-in 0s infinite;
-  font-size: 80px;
-  color: #69ceea;
-  font-weight: bold;
-  /*position: absolute;
-  left: 107px;
-  top: -23px;*/
-}
-
-@keyframes Blink {
-  0% { opacity: 0 }
-  100% { opacity: 1 }
-}
-
-
 h1 {
-  color: #f6ae73;
   font-size: 70px;
   font-weight: bold;
 }
 
 h2 {
-  color: grey;
   font-size: 35px;
   font-weight: 400;
 }
 
 h3 {
-  color: #69ceea;
   font-weight: bold;
   font-size: 25px;
+}
+
+h4 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  margin-bottom: 10px;s
 }
 
 /* Splash */
@@ -119,7 +159,6 @@ h3 {
 
 .logo {
   font-weight: bold;
-  color: #f6ae73;
   margin-top: 40px;
   margin-left: 40px;
 }
@@ -134,7 +173,7 @@ li {
 /* span */
 
 .divider {
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid white;
   width: 50px;
   padding-top: 20px;
   text-decoration: underline;
@@ -142,6 +181,7 @@ li {
 }
 
 /* sidebar */
+
 .sidebar {
   padding-right: 70px;
   padding-left:50px;

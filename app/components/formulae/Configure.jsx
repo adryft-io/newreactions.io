@@ -8,7 +8,7 @@ const Configure = ({
   valid,
   onSave,
 }) => (
-  <div>
+  <div className="space-top nine columns componentContainer row">
     <h3>Name your formula</h3>
     <input onChange={(e) => { handleName(e.target.value); }} />
 

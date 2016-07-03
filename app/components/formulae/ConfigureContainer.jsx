@@ -88,7 +88,7 @@ class ConfigureContainer extends Component {
 
   handleChange(formulaPart, fieldName, fieldValue) {
     // TODO: state should be treated as immutable
-    this.state.formula[`${formulaPart}Fields`][fieldName] = fieldValue;
+    this.state.formula[`${formulaPart}_fields`][fieldName] = fieldValue;
     this.setState({ valid: fieldValue.length > 0 });
   }
 

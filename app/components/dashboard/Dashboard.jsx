@@ -9,7 +9,7 @@ const Dashboard = ({
   onSelectChannel,
   onSelectFormula,
 }) => (
-  <div className="nine columns componentContainer">
+  <div className="space-top nine columns componentContainer">
     <div>
       <h3>Welcome {localStorage.getItem('user.name')},</h3>
       <p className="offset">This is your personal dashboard. You may browse your formulae below.

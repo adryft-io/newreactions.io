@@ -2,7 +2,9 @@ import React, { PropTypes } from 'react';
 import { hashHistory } from 'react-router';
 
 const Select = (props) => (
-  <div>
+  <div className="row componentContainer">
+    <h3> Here is Action and Reaction </h3>
+    <p> Welcome to the internet of things, what would you like to create today? </p>
     <ul>
       {props.channel.map((value, index) => (
         <li
@@ -27,4 +29,3 @@ Select.propTypes = {
 };
 
 export default Select;
-

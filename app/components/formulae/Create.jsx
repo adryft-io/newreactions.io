@@ -1,4 +1,4 @@
-  // TODO: make selected action bold and  blue
+// TODO: make selected action bold and   blue
 import React, { PropTypes } from 'react';
 const Create = ({
   selectedAction,

@@ -3,7 +3,6 @@ import React, { PropTypes } from 'react';
 const SelectInfoSidebar = (props) => (
   <div>
     <ul>
-      <span className="divider"></span>
       {props.channel.map((value, index) => (
         <li key={index}>
         {value}

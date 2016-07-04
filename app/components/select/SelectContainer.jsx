@@ -2,6 +2,7 @@ import React from 'react';
 import Select from './Select.jsx';
 import SelectInfoSidebar from './SelectInfoSidebar.jsx';
 import { Link } from 'react-router';
+import Sidebar from '../Sidebar.jsx';
 
 
 class SelectContainer extends React.Component {
@@ -27,9 +28,6 @@ class SelectContainer extends React.Component {
   render() {
     return (
       <div>
-        <h4> new reaction </h4>
-        <h3> Here is Action and Reaction </h3>
-        <p> Welcome to the internet of things, what would you like to create today? </p>
         <Select
           channel={this.state.channel}
           onMouseLeave={this.onMouseLeave}
@@ -37,12 +35,6 @@ class SelectContainer extends React.Component {
           isHovered={this.state.isHovered}
 
         />
-        <SelectInfoSidebar
-          channel={this.state.channel}
-          isHovered={this.state.isHovered}
-        />
-        <h4><Link to="/about"> About Us </Link></h4>
-        <h4><Link to="/manifesto"> Manifesto </Link></h4>
       </div>
     );
   }

@@ -68,6 +68,25 @@ a:hover {
   opacity: 0.5;
 }
 
+input {
+  padding:10px;
+  background-color: transparent;
+  border:none;
+  border-bottom: 1px solid white;
+  outline: none;
+}
+
+/*input[type=text] {
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border-bottom: 1px solid rgba(81, 203, 238, 1);
+}*/
 
 
 .componentContainer {
@@ -116,6 +135,11 @@ li {
   margin-top: 70px;
 }
 
+.float-right {
+  text-align: right;
+  position: relative;
+  float: right;
+}
 /*Typography */
 h1, h2, h3, h4, p {
   letter-spacing: 1px;
@@ -149,6 +173,10 @@ h4 {
   margin-bottom: 10px;s
 }
 
+.italic {
+  font-style: italic;
+}
+
 /* Splash */
 
 .splash {
@@ -180,10 +208,15 @@ li {
   display: block;
 }
 
+.bio {
+  margin-top: 40px;
+  font-size: 15px;
+}
+
 /* sidebar */
 
 .sidebar {
-  padding-right: 70px;
+  padding-right: 0px;
   padding-left:50px;
   margin:0;
 }

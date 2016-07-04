@@ -17,13 +17,14 @@ const listChannels = (channels, callback, selectedChannel) =>
     )) :
     <div><li>No Formulae Created</li></div>);
 
+// TODO: change reaction_name to name once fixed
 const listFormulae = (formulae, callback, selectedFormula, start, end) =>
   formulae
   .slice(start, end)
   .map((formula, index) => (
     <div key={index} onClick={() => { callback(formula); }}>
       <li className={selectedFormula === formula ? 'activelink' : ''}>
-        {formula.action_name}
+        {formula.reaction_name}
       </li>
     </div>
 ));

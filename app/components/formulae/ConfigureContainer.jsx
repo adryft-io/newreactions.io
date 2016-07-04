@@ -55,7 +55,7 @@ class ConfigureContainer extends Component {
 
   onSave() {
     const formula = {
-      name: '',
+      name: this.state.formula.name,
       action_channel: 'gmail',
       action_name: 'new-important',
       action_fields: JSON.stringify(this.state.formula.action_fields),

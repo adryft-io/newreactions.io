@@ -38,7 +38,7 @@ const DashboardInfoSidebar = ({ formulaInfo, deleteFormula }) => (
           </li>
           <a
             className="button"
-            onClick={() => (confirm('Delete ${formulaInfo.name}?') ?
+            onClick={() => (confirm(`Delete formula  ${formulaInfo.name}?`) ?
             deleteFormula(formulaInfo.id) : '')}
           >DELETE THIS ACTION
           </a>

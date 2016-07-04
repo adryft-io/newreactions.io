@@ -3,6 +3,8 @@ import moment from 'moment';
 import _ from 'underscore';
 import { listActions } from './DashboardHelpers.js';
 
+
+// TODO add confirm to eslintignore
 const DashboardInfoSidebar = ({ formulaInfo, deleteFormula }) => (
   <div>
     <h3>Formula information</h3>
@@ -16,7 +18,11 @@ const DashboardInfoSidebar = ({ formulaInfo, deleteFormula }) => (
         <ul>
           <li>
             <span className="bold">Name: </span>
-            <p className="dashSideP">{formulaInfo.action_name}</p>
+            <p className="dashSideP">{formulaInfo.name}</p>
+          </li>
+          <li>
+            <span className="bold">Reaction Name: </span>
+            <p className="dashSideP">{formulaInfo.reaction_name}</p>
           </li>
           <li>
             <span className="bold">Created At: </span>
@@ -28,11 +34,12 @@ const DashboardInfoSidebar = ({ formulaInfo, deleteFormula }) => (
           </li>
           <li>
             <span className="bold">Action Name: </span>
-            <p className="dashSideP">{formulaInfo.reaction_name}</p>
+            <p className="dashSideP">{formulaInfo.action_name}</p>
           </li>
           <a
             className="button"
-            onClick={() => { deleteFormula(formulaInfo.id); }}
+            onClick={() => (confirm(`Delete formula  ${formulaInfo.name}?`) ?
+            deleteFormula(formulaInfo.id) : '')}
           >DELETE THIS ACTION
           </a>
         </ul>

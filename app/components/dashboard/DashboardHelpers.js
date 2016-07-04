@@ -23,7 +23,7 @@ const listFormulae = (formulae, callback, selectedFormula, start, end) =>
   .map((formula, index) => (
     <div key={index} onClick={() => { callback(formula); }}>
       <li className={selectedFormula === formula ? 'activelink' : ''}>
-        {formula.action_name}
+        {formula.name}
       </li>
     </div>
 ));

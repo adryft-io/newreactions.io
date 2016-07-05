@@ -29,7 +29,7 @@ const listFormulae = (formulae, callback, selectedFormula, start, end) =>
 ));
 
 const listActions = (actionString) =>
-  _.map(JSON.parse(actionString), (action, index) => (
+  _.map(actionString, (action, index) => (
     <div key={index}>
       <p>
         {`${index}: ${action}`}

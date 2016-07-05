@@ -12,7 +12,7 @@ const Create = ({
   <div className="space-top nine columns componentContainer row">
     <div className="six columns">
       <h3>Choose an action</h3>
-    {actions.map((action, index) => (
+      {actions.map((action, index) => (
       <div key={index} onClick={() => { onSelectAction(action); }}>
         <h4>{action.channel}</h4>
         <p className="small-paragraph">{action.name}</p>

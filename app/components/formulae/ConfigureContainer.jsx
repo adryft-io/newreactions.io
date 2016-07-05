@@ -9,8 +9,8 @@ class ConfigureContainer extends Component {
     super(props);
 
     this.state = {
-      valid: false,
       loading: true,
+      errors: {},
       selectedAction: null,
       selectedReaction: null,
       formula: {
@@ -42,10 +42,12 @@ class ConfigureContainer extends Component {
           fields: [{
             name: 'phone',
             type: 'text',
+            validate: /^\+1([0-9]{3})([0-9]{3})([0-9]{4})$/,
             label: 'Phone Number',
           }, {
             name: 'message',
             type: 'text',
+            validate: /^.+$/,
             label: 'Message',
           }],
         },
@@ -83,13 +85,28 @@ class ConfigureContainer extends Component {
   }
 
   handleName(name) {
-    this.setState({ formula: { ...this.state.formula, name }, valid: name.length > 0 });
+    const errors = { ...this.state.errors };
+    if (!name.match(/^[a-zA-Z0-9\s]{3,}$/)) {
+      errors.name = 'name must be alphanumeric';
+    } else {
+      delete errors.name;
+    }
+
+    this.setState({ formula: { ...this.state.formula, name }, errors });
   }
 
-  handleChange(formulaPart, fieldName, fieldValue) {
-    // TODO: state should be treated as immutable
-    this.state.formula[`${formulaPart}_fields`][fieldName] = fieldValue;
-    this.setState({ valid: fieldValue.length > 0 });
+  handleChange(formulaPart, field, value) {
+    const errors = { ...this.state.errors };
+    if (!value.match(field.validate)) {
+      errors[field.name] = `${field.name} is invalid`;
+    } else {
+      delete errors[field.name];
+    }
+
+    const formula = { ...this.state.formula };
+    formula[`${formulaPart}_fields`][field.name] = value;
+
+    this.setState({ formula, errors });
   }
 
   render() {
@@ -103,7 +120,7 @@ class ConfigureContainer extends Component {
           selectedReaction={this.state.selectedReaction}
           handleName={this.handleName}
           handleChange={this.handleChange}
-          valid={this.state.valid}
+          errors={this.state.errors}
           onSave={this.onSave}
         />
         <Sidebar>

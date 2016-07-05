@@ -76,6 +76,10 @@ input {
   outline: none;
 }
 
+input.error {
+  border-bottom: 1px solid red;
+}
+
 /*input[type=text] {
   outline: none;
   padding: 3px 0px 3px 3px;
@@ -119,7 +123,6 @@ button:hover {
   color:white;
   opacity:0.5;
 }
-
 
 /* offset  and margins and bold */
 .bold {

@@ -30,11 +30,19 @@ class CreateContainer extends Component {
           id: 1,
           channel: this.state.channel,
           name: 'new-important',
+        }, {
+          id: 2,
+          channel: this.state.channel,
+          name: 'new-starred',
         }],
         reactions: [{
           id: 1,
           channel: 'twilio',
           name: 'sms',
+        }, {
+          id: 2,
+          channel: 'wemo',
+          name: 'power',
         }],
       });
     }, 250);

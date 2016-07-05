@@ -8,6 +8,7 @@ const Select = (props) => (
     <ul>
       {props.channel.map((value, index) => (
         <li
+          className="select-service"
           key={index}
           onMouseEnter={() => { props.onMouseEnter(value); }}
           onMouseLeave={() => { props.onMouseLeave(); }}

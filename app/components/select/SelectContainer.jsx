@@ -4,7 +4,6 @@ import SelectInfoSidebar from './SelectInfoSidebar.jsx';
 import { Link } from 'react-router';
 import Sidebar from '../Sidebar.jsx';
 
-
 class SelectContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +22,6 @@ class SelectContainer extends React.Component {
   onMouseLeave() {
     this.setState({ isHovered: '' });
   }
-
 
   render() {
     return (

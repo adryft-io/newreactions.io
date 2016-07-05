@@ -5,9 +5,9 @@ body{
   background: linear-gradient(89deg, #38dfca, #388ddf, #9c38df, #df386a, #ecb036);
   background-size: 800% 800%;
 
-  -webkit-animation: AnimationName 25s ease infinite;
-  -moz-animation: AnimationName 25s ease infinite;
-  animation: AnimationName 25s ease infinite;
+  -webkit-animation: AnimationName 1000s ease infinite;
+  -moz-animation: AnimationName 1000s ease infinite;
+  animation: AnimationName 1000s ease infinite;
 
 }
 
@@ -112,7 +112,7 @@ button, .button {
 }
 
 .button:hover {
-  color:white;
+  color: white;
   opacity: 0.5;
 }
 button:hover {
@@ -235,7 +235,6 @@ li {
   top: 0;
   position: absolute;
 }
-
 .navigation { /*bae*/
   position: relative;
   z-index: 2;
@@ -247,3 +246,11 @@ li {
   /*display: inline;*/
   margin-right: 20px;
 }
+.small-text {
+  color: grey;
+}
+
+.select-service:hover {
+  color: grey;
+}
+

@@ -14,7 +14,7 @@ const Create = ({
       <h3>Choose an action</h3>
     {actions.map((action, index) => (
       <div key={index} onClick={() => { onSelectAction(action); }}>
-        <h4>{action.channel}</h4>
+        <h4 className={selectedAction ? 'small-text' : ''}>{action.channel}</h4>
         <p className="small-paragraph">{action.name}</p>
       </div>
       ))}
@@ -24,7 +24,7 @@ const Create = ({
       <ul>
         {reactions.map((reaction, index) => (
           <div key={index} onClick={() => { onSelectReaction(reaction); }}>
-            <li><h4>{reaction.channel}</h4></li>
+            <li><h4 className={selectedReaction ? 'small-text' : ''} >{reaction.channel}</h4></li>
             <p className="small-paragraph">{reaction.name}</p>
           </div>
         ))}

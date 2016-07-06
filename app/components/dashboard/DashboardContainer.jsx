@@ -38,7 +38,7 @@ class DashboardContainer extends React.Component {
     fetch(`/api/v1/formulae?action_channel__not=null&user_id=${localStorage.getItem('user.id')}`)
     .then(res => res.json())
     .then(data => this.setState({
-      channels: getUniqueChannels(data),
+      channels: getUniqueChannels(data, 'action_channel'),
       formulae: data.data,
     }));
   }

@@ -2,8 +2,8 @@ import React from 'react';
 import _ from 'underscore';
 
 
-const getUniqueChannels = (data) => _.uniq(_.reduce(data.data, (prev, curr) => {
-  prev.push(curr.action_channel);
+const getUniqueChannels = (data, element) => _.uniq(_.reduce(data.data, (prev, curr) => {
+  prev.push(curr[element]);
   return prev;
 }, []));
 

@@ -6,7 +6,7 @@ const Select = ({ channels, onSelectChannel }) => (
     <h3> Here is Action and Reaction </h3>
     <p> Welcome to the internet of things, what would you like to create today? </p>
     <ul>
-      {listChannels(channels, onSelectChannel, 'select-service')}
+      {listChannels(channels, onSelectChannel)}
     </ul>
   </div>
 );

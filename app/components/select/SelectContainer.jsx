@@ -35,7 +35,9 @@ class SelectContainer extends React.Component {
     return (
       <div>
         <Select
-          channel={this.state.channels}
+          channels={this.state.channels}
+          onSelectChannel={this.onSelectChannel}
+          selectedChannel={this.state.selectedChannel}
         />
       </div>
     );

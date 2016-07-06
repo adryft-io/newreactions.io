@@ -7,15 +7,15 @@ const getUniqueChannels = (data, element) => _.uniq(_.reduce(data.data, (prev, c
   return prev;
 }, []));
 
-const listChannels = (channels, callback, selectedChannel) =>
+const listChannels = (channels, callback, selectedChannel, className) =>
   (channels.length ?
     channels.map((channel, index) =>
       (
       <div key={index} onClick={() => { callback(channel); }}>
-        <li className={selectedChannel === channel ? 'activelink' : ''}>{channel}</li>
+        <li className={selectedChannel === channel ? className : ''}>{channel}</li>
       </div>
     )) :
-    <div><li>No Formulae Created</li></div>);
+    <div><li>{'none'}</li></div>);
 
 const listFormulae = (formulae, callback, selectedFormula, start, end) =>
   formulae
@@ -31,9 +31,7 @@ const listFormulae = (formulae, callback, selectedFormula, start, end) =>
 const listActions = (actionString) =>
   _.map(actionString, (action, index) => (
     <div key={index}>
-      <p>
-        {`${index}: ${action}`}
-      </p>
+      <p>{`${index}: ${action}`}</p>
     </div>
   )
 );

@@ -22,7 +22,7 @@ const Dashboard = ({
         <div className="four columns">
           <h3>Channels</h3>
           <ul className="offset">
-            {listChannels(channels, onSelectChannel, selectedChannel)}
+            {listChannels(channels, onSelectChannel, selectedChannel, 'activelink')}
           </ul>
         </div>
         <h3>Formulae</h3>

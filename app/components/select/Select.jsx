@@ -1,25 +1,20 @@
 import React, { PropTypes } from 'react';
-import { hashHistory } from 'react-router';
+import { listChannels } from '../dashboard/DashboardHelpers.js';
 
-const Select = (props) => (
+const Select = ({ channels, onSelectChannel }) => (
   <div className="row componentContainer">
     <h3> Here is Action and Reaction </h3>
     <p> Welcome to the internet of things, what would you like to create today? </p>
     <ul>
-      {props.channel.map((value, index) => (
-        <li
-          className="select-service"
-          key={index}
-          onClick={() => { hashHistory.push(`/formulae/create/${value}`); }}
-        >
-        {value}
-        </li>))}
+      {listChannels(channels, onSelectChannel, 'select-service')}
     </ul>
   </div>
 );
 
 Select.propTypes = {
-  channel: PropTypes.array.isRequired,
+  channels: PropTypes.array.isRequired,
+  selectedChannel: PropTypes.string,
+  onSelectChannel: PropTypes.func.isRequired,
 };
 
 export default Select;

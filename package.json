@@ -7,7 +7,7 @@
     "build": "webpack",
     "start": "webpack-dev-server",
     "start:production": "node server.js",
-    "test": "mocha test/.setup.js test"
+    "test": "eslint app && mocha test/.setup.js test"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
   "dependencies": {
     "express": "^4.14.0",
     "express-http-proxy": "^0.7.2",
+    "lodash": "^4.13.1",
     "moment": "^2.13.0",
     "react": "*",
     "react-dom": "*",

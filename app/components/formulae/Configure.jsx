@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import _ from 'lodash';
 
 const Configure = ({
   selectedAction,
@@ -18,34 +19,40 @@ const Configure = ({
     </h3>
     <div className="six columns">
       <h3>{selectedAction && selectedAction.name} Fields</h3>
-        {selectedAction.fields.length < 1 ?
+        {Object.keys(selectedAction.fields).length < 1 ?
           <div>
             <p className="small">There are no fields for this action</p>
           </div> :
-          selectedAction.fields.map((field, index) => (
-            <div key={index}>
-              {field.name}:
-              <input
-                className={errors[field.name] ? 'error' : ''}
-                onChange={(e) => { handleChange('action', field, e.target.value); }}
-              />
+          _.map(selectedAction.fields, (field, name) => (
+            <div key={name}>
+              <p>
+                {name}:
+                <input
+                  className={errors[name] ? 'error' : ''}
+                  onChange={(e) => {
+                    handleChange('action', name, field, e.target.value);
+                  }}
+                />
+              </p>
             </div>
           ))
         }
     </div>
     <div className="five columns">
-      <h3>{selectedReaction && selectedReaction.name} boo Fields:</h3>
-      {selectedReaction.fields.length < 1 ?
+      <h3>{selectedReaction && selectedReaction.name} Fields:</h3>
+      {Object.keys(selectedReaction.fields).length < 1 ?
         <div>
           <p className="small">There are no fields for this reaction</p>
         </div> :
-        selectedReaction.fields.map((field, index) => (
-          <div key={index}>
+        _.map(selectedReaction.fields, (field, name) => (
+          <div key={name}>
             <p>
-              {field.name}:
+              {name}:
               <input
-                className={errors[field.name] ? 'error' : ''}
-                onChange={(e) => { handleChange('reaction', field, e.target.value); }}
+                className={errors[name] ? 'error' : ''}
+                onChange={(e) => {
+                  handleChange('reaction', name, field, e.target.value);
+                }}
               />
             </p>
           </div>

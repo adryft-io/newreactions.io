@@ -23,29 +23,20 @@ class CreateContainer extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
+    Promise.all([
+      fetch(`/api/v1/elements?type=action&channel=${this.state.channel}`)
+        .then(response => response.json())
+        .then(json => json.data),
+      fetch('/api/v1/elements?type=reaction')
+        .then(response => response.json())
+        .then(json => json.data),
+    ]).then(([actions, reactions]) => {
       this.setState({
         loading: false,
-        actions: [{
-          id: 1,
-          channel: this.state.channel,
-          name: 'new-important',
-        }, {
-          id: 2,
-          channel: this.state.channel,
-          name: 'new-starred',
-        }],
-        reactions: [{
-          id: 1,
-          channel: 'twilio',
-          name: 'sms',
-        }, {
-          id: 2,
-          channel: 'wemo',
-          name: 'power',
-        }],
+        actions,
+        reactions,
       });
-    }, 250);
+    });
   }
 
   onSelectAction(action) {

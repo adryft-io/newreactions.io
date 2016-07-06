@@ -110,8 +110,7 @@ input[type=text]:focus, textarea:focus {
 }
 
 button, .button {
-  height: 10px;
-  border: none;
+  border: 1px solid white;
   color: white;
 }
 
@@ -173,7 +172,7 @@ h4 {
   border-bottom: 1px solid lightgrey;
   padding-bottom: 20px;
   text-transform: uppercase;
-  margin-bottom: 10px;s
+  margin-bottom: 10px;
 }
 
 .italic {
@@ -253,7 +252,16 @@ li {
   color: grey;
 }
 
-.select-service:hover {
+.selected {
   color: grey;
 }
 
+.element:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+.select-service:hover {
+  color: grey;
+  cursor: pointer;
+}

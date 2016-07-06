@@ -23,6 +23,18 @@ class CreateContainer extends Component {
   }
 
   componentDidMount() {
+    Promise.all([
+      fetch('/api/v1/elements')
+        .then(response => response.json())
+        .then(json => json.data),
+      fetch('/api/v1/elements')
+        .then(response => response.json())
+        .then(json => json.data),
+    ]).then(([actions, reactions]) => {
+      console.log(actions);
+      console.log(reactions);
+    });
+
     setTimeout(() => {
       this.setState({
         loading: false,

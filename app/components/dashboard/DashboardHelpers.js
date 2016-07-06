@@ -7,12 +7,14 @@ const getUniqueChannels = (data, element) => _.uniq(_.reduce(data.data, (prev, c
   return prev;
 }, []));
 
-const listChannels = (channels, callback, selectedChannel, className) =>
+const listChannels = (channels, callback, className, selectedChannel = 'notset') =>
   (channels.length ?
     channels.map((channel, index) =>
       (
       <div key={index} onClick={() => { callback(channel); }}>
-        <li className={selectedChannel === channel ? className : ''}>{channel}</li>
+        <li
+          className={selectedChannel === channel || selectedChannel === 'notset' ? className : ''}
+        >{channel}</li>
       </div>
     )) :
     <div><li>{'none'}</li></div>);

@@ -5,9 +5,9 @@ body{
   background: linear-gradient(89deg, #38dfca, #388ddf, #9c38df, #df386a, #ecb036);
   background-size: 800% 800%;
 
-  -webkit-animation: AnimationName 1000s ease infinite;
-  -moz-animation: AnimationName 1000s ease infinite;
-  animation: AnimationName 1000s ease infinite;
+  -webkit-animation: AnimationName 100s ease infinite;
+  -moz-animation: AnimationName 100s ease infinite;
+  animation: AnimationName 100s ease infinite;
 
 }
 
@@ -111,13 +111,24 @@ input[type=text]:focus, textarea:focus {
 
 button, .button {
   border: 1px solid white;
+  border-radius: 0;
   color: white;
 }
 
 .button:hover {
-  color: white;
+  background-color: white;
   opacity: 0.5;
+  border: none;
+  color: grey;
 }
+
+.no-border, .no-border:hover {
+  border: none;
+  background-color: transparent;
+  color:white;
+  height: 20px;
+}
+
 button:hover {
   color:white;
   opacity:0.5;
@@ -193,6 +204,15 @@ h4 {
   margin-left: 40px;
 }
 
+.logoimg {
+  width: 40px;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.logotitle {
+  margin-bottom: 10px;
+}
+
 /* list styles */
 
 li {
@@ -227,13 +247,13 @@ li {
   margin: 0;
 }
 .sidebarLineTwo{
-  border-left: solid 1px lightgrey;
+  border-left: solid 1px white;
   height: inherit;
   margin: 0;
 }
 .sidebarDiv { /*daddy*/
   width: 100%;
-  height: 100%;
+  height: 130%;
   top: 0;
   position: absolute;
 }
@@ -264,4 +284,19 @@ li {
 .select-service:hover {
   color: grey;
   cursor: pointer;
+}
+
+/* animations */
+
+.floating{
+    -webkit-animation-name: Floatingx;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes Floatingx{
+    from {-webkit-transform:translate(0, 0px);}
+    65% {-webkit-transform:translate(0, 5px);}
+    to {-webkit-transform: translate(0, -0px);}
 }

@@ -24,7 +24,7 @@ class SelectContainer extends React.Component {
   }
 
   getChannels() {
-    fetch('/api/v1/elements?channel__not=null')
+    fetch('/api/v1/elements?channel__not=null&type=action')
     .then(res => res.json())
     .then(data => this.setState({
       channels: getUniqueChannels(data, 'channel'),

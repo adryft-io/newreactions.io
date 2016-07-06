@@ -11,9 +11,10 @@ const listChannels = (channels, callback, className, selectedChannel) =>
   (channels.length ?
     channels.map((channel, index) =>
       (
-      <div key={index} onClick={() => { callback(channel); }}>
+      <div key={index}>
         <li
           className={selectedChannel === channel ? className : 'select-service'}
+          onClick={() => { callback(channel); }}
         >{channel}</li>
       </div>
     )) :

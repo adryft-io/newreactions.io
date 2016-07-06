@@ -26,33 +26,20 @@ class ConfigureContainer extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
+    Promise.all([
+      fetch(`/api/v1/elements/${this.props.params.actionId}`)
+        .then(response => response.json())
+        .then(json => json.data[0]),
+      fetch(`/api/v1/elements/${this.props.params.reactionId}`)
+        .then(response => response.json())
+        .then(json => json.data[0]),
+    ]).then(([selectedAction, selectedReaction]) => {
       this.setState({
         loading: false,
-        selectedAction: {
-          id: this.props.params.actionId,
-          channel: 'gmail',
-          name: 'new-important',
-          fields: [],
-        },
-        selectedReaction: {
-          id: this.props.params.reactionId,
-          channel: 'twilio',
-          name: 'sms',
-          fields: [{
-            name: 'phone',
-            type: 'text',
-            validate: /^\+1([0-9]{3})([0-9]{3})([0-9]{4})$/,
-            label: 'Phone Number',
-          }, {
-            name: 'message',
-            type: 'text',
-            validate: /^.+$/,
-            label: 'Message',
-          }],
-        },
+        selectedAction,
+        selectedReaction,
       });
-    }, 250);
+    });
   }
 
   onSave() {
@@ -95,16 +82,17 @@ class ConfigureContainer extends Component {
     this.setState({ formula: { ...this.state.formula, name }, errors });
   }
 
-  handleChange(formulaPart, field, value) {
+  handleChange(formulaPart, name, field, value) {
     const errors = { ...this.state.errors };
-    if (!value.match(field.validate)) {
-      errors[field.name] = `${field.name} is invalid`;
+    const regex = new RegExp(field.validate);
+    if (!value.match(regex)) {
+      errors[name] = `${name} is invalid`;
     } else {
-      delete errors[field.name];
+      delete errors[name];
     }
 
     const formula = { ...this.state.formula };
-    formula[`${formulaPart}_fields`][field.name] = value;
+    formula[`${formulaPart}_fields`][name] = value;
 
     this.setState({ formula, errors });
   }

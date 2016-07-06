@@ -45,11 +45,11 @@ class ConfigureContainer extends Component {
   onSave() {
     const formula = {
       name: this.state.formula.name,
-      action_channel: 'gmail',
-      action_name: 'new-important',
+      action_channel: this.state.selectedAction.channel,
+      action_name: this.state.selectedAction.name,
       action_fields: JSON.stringify(this.state.formula.action_fields),
-      reaction_channel: 'twilio',
-      reaction_name: 'sms',
+      reaction_channel: this.state.selectedReaction.channel,
+      reaction_name: this.state.selectedReaction.name,
       reaction_fields: JSON.stringify(this.state.formula.reaction_fields),
       user_id: localStorage.getItem('user.id'),
     };

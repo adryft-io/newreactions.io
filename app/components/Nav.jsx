@@ -8,8 +8,7 @@ const Nav = ({ signOut }) => (
         <div>
           <li><Link to="/manifesto">Manifesto</Link></li>
           <li><Link to="/dashboard">Dashboard</Link></li>
-          <li><Link to="/formulae/create/gmail">Create Formula</Link></li>
-          <li><Link to="/select">Select</Link></li>
+          <li><Link to="/select">Channels</Link></li>
           <li><Link to="/" onClick={signOut}>Sign Out</Link></li>
         </div> :
         <div>

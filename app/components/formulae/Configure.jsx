@@ -26,7 +26,7 @@ const Configure = ({
           _.map(selectedAction.fields, (field, name) => (
             <div key={name}>
               <p>
-                {name}:
+                {field.label}:
                 <input
                   className={errors[name] ? 'error' : ''}
                   onChange={(e) => {
@@ -47,7 +47,7 @@ const Configure = ({
         _.map(selectedReaction.fields, (field, name) => (
           <div key={name}>
             <p>
-              {name}:
+              {field.label}:
               <input
                 className={errors[name] ? 'error' : ''}
                 onChange={(e) => {

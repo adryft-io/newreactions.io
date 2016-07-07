@@ -12,10 +12,12 @@ const listChannels = (channels, callback, className, selectedChannel) =>
     channels.map((channel, index) =>
       (
       <div key={index}>
-        <li
-          className={selectedChannel === channel ? className : 'select-service'}
-          onClick={() => { callback(channel); }}
-        >{channel}</li>
+        <li onClick={() => { callback(channel); }}>
+          <img
+            className={`${channel}Channel floating`}
+            src={`../../img/icon${channel}.png`} alt="icons"
+          />
+        </li>
       </div>
     )) :
     <div><li>{'none'}</li></div>);

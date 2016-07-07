@@ -21,7 +21,7 @@ const listChannels = (channels, callback, className, selectedChannel) =>
         </li>
       </div>
     )) :
-    <div><li>{'none'}</li></div>);
+    <div><li>{'please create a formula'}</li></div>);
 
 const listFormulae = (formulae, callback, selectedFormula, start, end) =>
   formulae

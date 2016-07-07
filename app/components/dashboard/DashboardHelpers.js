@@ -14,13 +14,14 @@ const listChannels = (channels, callback, className, selectedChannel) =>
       <div key={index}>
         <li onClick={() => { callback(channel); }}>
           <img
-            className={!className ?`${channel}Channel floating` : selectedChannel === channel ? className : 'element'}
+            className={selectedChannel === channel ?
+              'activelink' : className || `${channel}Channel floating`}
             src={className ? '' : `../../img/icon${channel}.png`} alt={channel}
           />
         </li>
       </div>
     )) :
-    <div><li>{'none'}</li></div>);
+    <div><li>{'please create a formula'}</li></div>);
 
 const listFormulae = (formulae, callback, selectedFormula, start, end) =>
   formulae

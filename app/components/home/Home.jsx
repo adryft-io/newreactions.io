@@ -5,7 +5,9 @@ const Home = () => (
   <div className="splash">
     <Splash
       title={'Here we create action and reaction'}
-      subtitle={'Please log in to get started'}
+      subtitle={!localStorage.getItem('user.name') ?
+        'Please login to get started' :
+        'Visit your dashboard to get started'}
     />
   </div>
 );

@@ -7,6 +7,7 @@ const Nav = ({ signOut }) => (
       {localStorage.getItem('user.id') ?
         <div>
           <li><Link to="/manifesto">Manifesto</Link></li>
+          <li><Link to="/about">About</Link></li>
           <li><Link to="/dashboard">Dashboard</Link></li>
           <li><Link to="/select">Channels</Link></li>
           <li><Link to="/" onClick={signOut}>Sign Out</Link></li>

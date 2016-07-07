@@ -51,7 +51,12 @@ class MainContainer extends React.Component {
           <div className="three columns sidebarLineTwo">
           </div>
         </div>
-        <div className="logo">new reactions</div>
+        <div className="logo">
+          <p className="logotitle">
+            <img src="../img/logo.png" alt="logo" className="logoimg floating" />
+            new reactions
+          </p>
+        </div>
         <div className="row content">
         {this.props.children}
         </div>

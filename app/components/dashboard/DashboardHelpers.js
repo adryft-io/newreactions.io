@@ -14,7 +14,8 @@ const listChannels = (channels, callback, className, selectedChannel) =>
       <div key={index}>
         <li onClick={() => { callback(channel); }}>
           <img
-            className={!className ?`${channel}Channel floating` : selectedChannel === channel ? className : 'element'}
+            className={selectedChannel === channel ?
+              'activelink' : className || `${channel}Channel floating`}
             src={className ? '' : `../../img/icon${channel}.png`} alt={channel}
           />
         </li>

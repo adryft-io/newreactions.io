@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Sidebar = (props) => (
-  <div className="three columns sidebar">
+  <div className="three columns sidebar animated fadeIn">
     {props.children}
   </div>
 );

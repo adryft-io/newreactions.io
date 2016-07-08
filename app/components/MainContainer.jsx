@@ -51,13 +51,13 @@ class MainContainer extends React.Component {
           <div className="three columns sidebarLineTwo">
           </div>
         </div>
-        <div className="logo">
+        <div className="logo animated fadeInUp">
           <p className="logotitle">
             <img src="../img/logo.png" alt="logo" className="logoimg floating" />
             new reactions
           </p>
         </div>
-        <div className="row content">
+        <div className="row content animated fadeIn">
         {this.props.children}
         </div>
       </div>

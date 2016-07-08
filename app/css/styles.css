@@ -275,6 +275,10 @@ li {
   color: grey;
 }
 
+.element {
+  color: white;
+}
+
 .element:hover {
   cursor: pointer;
   color: grey;

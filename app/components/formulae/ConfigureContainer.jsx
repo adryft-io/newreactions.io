@@ -75,6 +75,8 @@ class ConfigureContainer extends Component {
     const errors = { ...this.state.errors };
     if (!name.match(/^[a-zA-Z0-9\s]{3,}$/)) {
       errors.name = 'name must be alphanumeric';
+    } else if (name.length > 18) {
+      errors.name = 'name must not exceed 18 characters';
     } else {
       delete errors.name;
     }

@@ -108,6 +108,14 @@ input[type=text]:focus, textarea:focus {
   float: right;
 }
 
+.smallError {
+  font-size: 15px;
+  font-style: italic;
+  font-weight: normal;
+  color: white;
+  opacity: 0.5;
+}
+
 button, .button {
   border: 1px solid white;
   border-radius: 0;
@@ -268,21 +276,24 @@ li {
   margin-right: 20px;
 }
 .small-text {
-  color: grey;
+  color: white;
 }
 
 .selected {
-  color: grey;
+  color: white;
+  opacity: 0.5;
 }
 
 .element:hover {
   cursor: pointer;
-  color: grey;
+  color: white;
+  font-weight: bold;
 }
 
 .select-service:hover {
-  color: grey;
+  color: white;
   cursor: pointer;
+  font-weight: bold;
 }
 
 /* animations */

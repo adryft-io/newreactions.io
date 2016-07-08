@@ -16,6 +16,7 @@ const Configure = ({
         className={errors.name ? 'error' : ''}
         onChange={(e) => { handleName(e.target.value); }}
       />
+      <p className="smallError">{errors.name}</p>
     </h3>
     <div className="six columns">
       <h3>{selectedAction && selectedAction.name} Fields</h3>
@@ -25,15 +26,14 @@ const Configure = ({
           </div> :
           _.map(selectedAction.fields, (field, name) => (
             <div key={name}>
-              <p>
-                {field.label}:
-                <input
-                  className={errors[name] ? 'error' : ''}
-                  onChange={(e) => {
-                    handleChange('action', name, field, e.target.value);
-                  }}
-                />
-              </p>
+              {field.label}:
+              <input
+                className={errors[name] ? 'error' : ''}
+                onChange={(e) => {
+                  handleChange('action', name, field, e.target.value);
+                }}
+              />
+              <p className="smallError">{errors[name]}</p>
             </div>
           ))
         }
@@ -46,15 +46,14 @@ const Configure = ({
         </div> :
         _.map(selectedReaction.fields, (field, name) => (
           <div key={name}>
-            <p>
-              {field.label}:
-              <input
-                className={errors[name] ? 'error' : ''}
-                onChange={(e) => {
-                  handleChange('reaction', name, field, e.target.value);
-                }}
-              />
-            </p>
+            {field.label}:
+            <input
+              className={errors[name] ? 'error' : ''}
+              onChange={(e) => {
+                handleChange('reaction', name, field, e.target.value);
+              }}
+            />
+            <p className="smallError">{errors[name]}</p>
           </div>
         ))
       }

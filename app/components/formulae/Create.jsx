@@ -12,9 +12,9 @@ const Create = ({
   <div className="space-top nine columns componentContainer row">
     <div className="six columns">
       <h3>Choose an action</h3>
+      <h4>{actions[0].channel}</h4>
       {actions.map((action, index) => (
         <div key={index}>
-          <h4>{action.channel}</h4>
           <p
             onClick={() => { onSelectAction(action); }}
             className={selectedAction === action ? 'element selected' : 'element'}

@@ -313,18 +313,18 @@ li {
 
 /* icons */
 
-.twilioChannel, .gmailChannel {
+.twilioChannel, .gmailChannel, .slackbotChannel, .wemoChannel, .kavrChannel{
   width: 160px;
   margin-right: 50px;
   margin-left: 40px;
   margin-top: 20px;
 }
 
-.twilioChannel {
+.twilioChannel{
   width: 216px;
 }
 
-.twilioChannel:hover, .gmailChannel:hover {
+.twilioChannel:hover, .gmailChannel:hover, .slackbotChannel:hover, .wemoChannel:hover, .kavrChannel:hover {
   -webkit-animation-name: none;
   opacity: 0.5;
 }
@@ -342,7 +342,7 @@ li {
     margin-right: 20px;
   }
 
-  .twilioChannel, .gmailChannel {
+  .twilioChannel, .gmailChannel, .slackbotChannel, .wemoChannel, .kavrChannel{
     margin-top: 40px;
     margin-left: 0px;
   }

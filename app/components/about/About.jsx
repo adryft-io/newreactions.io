@@ -1,7 +1,7 @@
 import React from 'react';
 
 const About = () => (
-  <div className="space-top nine columns componentContainer row">
+  <div className="space-top nine columns componentContainer row animated fadeIn">
     <h3>About us</h3>
     <div>
       <p>

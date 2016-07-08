@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 const Nav = ({ signOut }) => (
-  <div className="nav">
+  <div className="nav animated fadeInUp">
     <ul>
       {localStorage.getItem('user.id') ?
         <div>

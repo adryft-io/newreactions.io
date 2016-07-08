@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Manifesto = () => (
-  <div className="nine columns componentContainer row">
+  <div className="nine columns componentContainer row animated fadeIn">
     <h3>Manifesto</h3>
     <div className="six columns">
       <p className="bio">

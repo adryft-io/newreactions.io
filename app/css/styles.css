@@ -315,12 +315,12 @@ li {
 
 .twilioChannel, .gmailChannel, .slackbotChannel, .wemoChannel, .kavrChannel{
   width: 160px;
-  margin-right: 50px;
+  /*margin-right: 50px;*/
   margin-left: 40px;
   margin-top: 20px;
 }
 
-.twilioChannel{
+.twilioChannel, .slackbotChannel, .wemoChannel, .kavrChannel{
   width: 216px;
 }
 
@@ -330,7 +330,11 @@ li {
 }
 
 .channels {
-  display: -webkit-inline-box;
+  width: 1250px;
+}
+
+.channelsDiv {
+  float: left;
 }
 
 

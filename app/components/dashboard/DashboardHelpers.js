@@ -10,7 +10,7 @@ const getUniqueChannels = (data, element) => _.uniq(_.reduce(data.data, (prev, c
 const listChannels = (channels, callback, className, selectedChannel) =>
   (!channels.length ? <div><li>{'please create a formula'}</li></div> :
     channels.map((channel, index) => (
-      <div key={index}>
+      <div className="channelsDiv" key={index}>
         <li onClick={() => { callback(channel); }}>
           <img
             className={className || `${channel}Channel floating`}

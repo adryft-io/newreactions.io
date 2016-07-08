@@ -1,6 +1,6 @@
 ![logo](https://raw.githubusercontent.com/adryft-io/images/master/logo-01.png)
 
-New reactions is a way to interact with technology that surrounds our physical and digital space. We believe in the power of distance and detachment, where someone can control a certain aspect of their lives, without being attached to it. This project started as a way to emulate and reverse engineer IFTTT’s brilliant approach to IoT. Here, we harvest the power of technology to transform actions into reactions.
+New reactions is a platform to interact with technology that surrounds our physical and digital space. We believe in the power of connectivity and automation, where someone can control a certain aspect of their lives, without being attached to it. This project was born from an admiration of IFTTT’s brilliant approach to IoT -- simultaneously paying homage and innovating on the concept. Here, we harness the power of technology to transform actions into reactions.
 
 
 –––––––
@@ -8,11 +8,8 @@ New reactions is a way to interact with technology that surrounds our physical a
 
 ![preview](https://raw.githubusercontent.com/adryft-io/images/master/newreaction.jpg)
 
-## A few things you need to know
-Our application is quite robust. We mounted our services on Docker containers and deployed them on AWS. We also make use of AWS SQS queue service in order to integrate our application. 
-
-## About Our SoA Architecture 
-We believe in building software-as-a-service where our web apps follow a constructive methodology that uses: 
+## About Our SoA Microservices Architecture 
+We believe in building software-as-a-service, with modular microservices : 
 
 1. Declarative formats to reduce the amount of time and cost for new developers to join the project. 
 2. Offer portability between execution environments. 

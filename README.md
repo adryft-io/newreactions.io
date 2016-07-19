@@ -21,3 +21,13 @@ New Reactions is a platform built upon modular microservices -- each service run
 
 ![logo](https://raw.githubusercontent.com/adryft-io/images/master/techstack.jpg)
 
+## How it Works
+New Reactions allows a user to select an action, for example when a user receives a Gmail labled "important", a reaction, such as a SMS text message via Twilio, will be sent.  An action is connected to a reaction through the creation of a formulae.
+
+![preview](https://raw.githubusercontent.com/adryft-io/images/master/channels.png)
+![preview](https://raw.githubusercontent.com/adryft-io/images/master/formulae.png)
+
+
+
+
+

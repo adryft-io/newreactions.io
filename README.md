@@ -13,7 +13,7 @@ New Reactions is a platform built upon modular microservices -- each service run
 
 1. Portability between execution environments, such as AWS or Digital Ocean. 
 2. Minimize divergence between development and production enviroments which streamlines continious deployment. 
-3. Scalability --- new instances of microserices can be readily created.
+3. Scalability -- new instances of microservices can be readily created.
 
 ![preview](https://raw.githubusercontent.com/adryft-io/images/master/newreactions-architecture.png)
 

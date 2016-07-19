@@ -8,13 +8,14 @@ New reactions is a platform to interact with technology that surrounds our physi
 
 ![preview](https://raw.githubusercontent.com/adryft-io/images/master/newreaction.jpg)
 
-## About Our SoA Microservices Architecture 
-We believe in building software-as-a-service, with modular microservices : 
+## Microservices Architecture 
+New Reactions is a platform built upon modular microservices -- each service runs in a Docker container linked together through a docker-compose file, which offers: 
 
-1. Declarative formats to reduce the amount of time and cost for new developers to join the project. 
-2. Offer portability between execution environments. 
-3. Reduce divergence between development and production which allows for continuous deployment. 
-4. Finally, being able to scale up without significant changes to the tools, architecture and development practices. 
+1. Portability between execution environments, such as AWS or Digital Ocean. 
+2. Minimize divergence between development and production enviroments which streamlines continious deployment. 
+3. Scalability --- new instances of microserices can be readily created.
+
+![preview](https://raw.githubusercontent.com/adryft-io/images/master/newreactionsArc.pdf)
 
 ## Technology Stack 
 

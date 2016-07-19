@@ -9,13 +9,13 @@ New reactions is a platform to interact with technology that surrounds our physi
 ![preview](https://raw.githubusercontent.com/adryft-io/images/master/newreaction.jpg)
 
 ## How it Works
-New Reactions allows a user to select an action, for example when a user receives a Gmail labled "important", a reaction, such as a SMS text message via Twilio, will be sent.  An action is connected to a reaction through the creation of a formulae.
+New reactions allows a user to select an action, for example when a user receives a Gmail labled "important", a reaction, such as a SMS text message via Twilio, will be sent.  An action is connected to a reaction through the creation of a formulae.
 
 ![preview](https://raw.githubusercontent.com/adryft-io/images/master/channels.png)
 ![preview](https://raw.githubusercontent.com/adryft-io/images/master/formulae.png)
 
 ## Microservices Architecture 
-New Reactions is a platform built upon modular microservices -- each service runs in a Docker container linked together through a docker-compose file, which offers: 
+New reactions is built upon modular microservices -- each service runs in a Docker container linked together through a docker-compose file, which offers: 
 
 1. Portability between execution environments, such as AWS or Digital Ocean. 
 2. Minimize divergence between development and production enviroments which streamlines continious deployment. 

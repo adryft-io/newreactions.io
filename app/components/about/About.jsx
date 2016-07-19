@@ -6,17 +6,15 @@ const About = () => (
     <div>
       <p>
         The internet of things (IoT) is a network of
-        physical objects, embedded with the capability
-        of bearing software, sensors, actuators and
+        physical objects, embedded with software, sensors, actuators and
         most importantly, network connectivity. <b>New reactions</b>  is a
         way to interact with technology that
         surrounds our physical and digital space.
         We believe in the power of distance and
         detachment, where someone can control
         a certain aspect of their lives, without being
-        attached to it.  This project started as a
-        way to emulate and reverse engineer <b>IFTTT’s</b>  brilliant
-        approach to IoT. Here, we harvest
+        attached to it.  This project was born out of admiration of <b>IFTTT’s</b>  brilliant
+        approach to automation -- paying homage while innovating on the concept. Here, we harness
         the power of technology to transform
         actions into reactions.
       </p>
@@ -24,19 +22,15 @@ const About = () => (
     <div className="six columns">
       <div>
         <p className="bio">
-          Matt is a happy fellow. Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit, sed do eiusmod tempor incididunt ut labore
-          et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Esther is a graduate of the Art Institute of San Francisco -- she combines
+          the artistic sense of a designer with sound software engineering to create beautiful yet
+          functional UI with frameworks such as React.
         </p>
         <span className="divider" /></div>
       <div>
         <p className="bio">
-          Ali is jolly Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat.
+          Ali is a former-Marine and graduated from CSU-Dominguez Hills -- he is adept at
+          solving complex technical challenges with technologies such as Docker and Nodal.
         </p>
         <span className="divider" />
       </div>
@@ -44,20 +38,16 @@ const About = () => (
     <div className="five columns">
       <div>
         <p className="bio">
-          Nam is content Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Nam studied electrical engineering at the University of Washington and is excited
+          about the future of Node.js and IoT -- he thrives at the intersection of people,
+          the Internet, and smart devices.
         </p>
         <span className="divider" />
       </div>
       <div>
         <p className="bio">
-          Esther is smiling Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Matt is as a seasoned web engineer, and excels at architecting and building scalable
+          back-ends for web applications while also prioritizing the needs of the end user.
         </p>
         <span className="divider" />
       </div>

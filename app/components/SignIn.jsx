@@ -6,9 +6,6 @@ const SignIn = () => (
       <form action="api/v1/auth/connect/google" method="get">
         <button type="submit"> Sign in with Google </button>
       </form>
-      <form action="api/v1/auth/connect/google" method="get">
-        <button type="submit"> Sign in with Facebook </button>
-      </form>
     </div>
   </div>
 );

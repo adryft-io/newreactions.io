@@ -8,10 +8,8 @@ const SidebarAbout = () => (
     </p>
     <span className="divider" />
     <ul className="space-top">
-      <li><a href="#" className="button no-border">contact us</a></li>
-      <li><a href="#" className="button no-border">github</a></li>
-      <li><a href="#" className="button no-border">slack</a></li>
-      <li><a href="#" className="button no-border">IFTTT</a></li>
+      <li><a href="https://github.com/adryft-io/newreactions.io" className="button no-border">github</a></li>
+      <li><a href="https://ifttt.com/" className="button no-border">IFTTT</a></li>
     </ul>
   </div>
 );

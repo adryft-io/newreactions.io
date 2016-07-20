@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'underscore';
+import _ from 'lodash';
 
 
 const getUniqueChannels = (data, element) => _.uniq(_.reduce(data.data, (prev, curr) => {

@@ -9,7 +9,7 @@ New reactions is a platform to interact with technology that surrounds our physi
 ![preview](https://raw.githubusercontent.com/adryft-io/images/master/newreaction.jpg)
 
 ## How it Works
-New reactions allows a user to select an action, for example when a user receives a Gmail labeled "important", a reaction, such as a SMS text message via Twilio, will be sent.  An action is connected to a reaction through the creation of a formulae.
+New reactions allows a user to select an action, for example when a user receives a Gmail labeled "important", a reaction, such as a SMS text message via Twilio, will be sent.  An action is connected to a reaction through the creation of a formulae.  Another use case is that a user can send a text message to turn on any device, such as a fan, connected to a Belkin Wemo Insight Smart Switch. 
 
 ![preview](https://raw.githubusercontent.com/adryft-io/images/master/channels.png)
 ![preview](https://raw.githubusercontent.com/adryft-io/images/master/formulae.png)

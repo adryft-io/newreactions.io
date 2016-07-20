@@ -15,11 +15,11 @@ New reactions allows a user to select an action, for example when a user receive
 ![preview](https://raw.githubusercontent.com/adryft-io/images/master/formulae.png)
 
 ## Microservices Architecture 
-New reactions is built upon modular micro-services -- each service runs in a Docker container linked together through a docker-compose.yml file, which offers: 
+New reactions is built upon modular microservices -- each service runs in a Docker container linked together through a docker-compose.yml file, which offers: 
 
 1. Portability between execution environments, such as AWS or Digital Ocean. 
 2. Minimize divergence between development and production environments which streamlines continuous deployment. 
-3. Scalability -- new instances of micro-services can be readily created.
+3. Scalability -- new instances of microservices can be readily created.
 ![preview](https://raw.githubusercontent.com/adryft-io/images/master/newreactions-architecture.png)
 
 ## Technology Stack 

@@ -31,7 +31,7 @@ const About = () => (
         <p className="bio">
           Ali is a former-Marine and graduated from CSU-Dominguez Hills -- he is adept at
           solving complex technical challenges. including relational database architecture,
-          service-based architecture, website design, RESTful API’s, and JavaScript development,
+          service-based architecture, website design, RESTful API’s and JavaScript development.
         </p>
         <span className="divider" />
       </div>

@@ -7,19 +7,17 @@ const getUniqueChannels = (data, element) => _.uniq(_.reduce(data.data, (prev, c
   return prev;
 }, []));
 
-const listChannels = (channels, callback, className, selectedChannel) =>
+const listChannels = (channels, callback, selectedChannel) =>
   (!channels.length ? <div><li>{'please create a formula'}</li></div> :
     channels.map((channel, index) => (
       <div className="channelsDiv" key={index}>
         <li onClick={() => { callback(channel); }}>
           <img
-            className={className || `${channel}Channel floating`}
-            src={className ? '' : `../../img/icon${channel}.png`}
-            alt={className ? '' : channel}
+            className={selectedChannel === channel ?
+              `${channel}Channel clicked` : `${channel}Channel floating`}
+            src={`../../img/icon${channel}.png`}
+            alt={channel}
           />
-          <p className={selectedChannel === channel ? 'activelink' : className}>
-            {className ? channel : ''}
-          </p>
         </li>
       </div>
     )));

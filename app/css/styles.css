@@ -281,6 +281,7 @@ li {
 
 .selected {
   color: white;
+  -webkit-animation-name: none;
   opacity: 0.5;
 }
 
@@ -326,6 +327,10 @@ li {
 
 .twilioChannel:hover, .gmailChannel:hover, .slackbotChannel:hover, .wemoChannel:hover, .kavrChannel:hover {
   -webkit-animation-name: none;
+  opacity: 0.5;
+}
+
+.clicked {
   opacity: 0.5;
 }
 

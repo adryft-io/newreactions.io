@@ -21,7 +21,8 @@
     "react": "*",
     "react-dom": "*",
     "react-router": "*",
-    "skeleton-css": "^2.0.4"
+    "skeleton-css": "^2.0.4",
+    "style-loader": "^0.13.1"
   },
   "devDependencies": {
     "babel-core": "*",

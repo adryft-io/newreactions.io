@@ -11,7 +11,7 @@ const listChannels = (channels, callback, selectedChannel) =>
   (!channels.length ? <div><li>{'please create a formula'}</li></div> :
     channels.map((channel, index) => (
       <div className="channelsDiv" key={index}>
-        <li onClick={() => { callback(channel); }}>
+        <li onClick={() => callback(channel)}>
           <img
             className={selectedChannel === channel ?
               `${channel}Channel clicked` : `${channel}Channel floating`}

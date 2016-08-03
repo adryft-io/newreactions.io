@@ -22,10 +22,10 @@ const Dashboard = ({
         <div className="four columns">
           <h3>Channels</h3>
           <ul className="offset">
-            {listChannels(channels, onSelectChannel, 'select-service', selectedChannel)}
+            {listChannels(channels, onSelectChannel, selectedChannel)}
           </ul>
         </div>
-        <h3>Formulae</h3>
+        <h3>Formulae Name</h3>
         <div className="four columns">
           <ul>
             {listFormulae(formulae, onSelectFormula, selectedFormula, formulae.length / 2)}
